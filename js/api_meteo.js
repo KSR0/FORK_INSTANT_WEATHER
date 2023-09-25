@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded",() => {
 
+    const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux"]
+
     document.querySelector("#searchBtn").addEventListener("click", function() {
         cityInsee = document.querySelector("#city-select").value;
         let div = document.getElementById("dropDownCard")
@@ -16,7 +18,21 @@ document.addEventListener("DOMContentLoaded",() => {
         .then(data => {
             if(!data.city.insee.length > 5 || !data.city.insee.length <5) 
             {
-                div.innerHTML += `<ul> Temperature à ${data.city.name} <li> Température minimale : ${data.forecast[0].tmin}°C </li><li> Température maximale : ${data.forecast[0].tmax}°C </li><li> Heures d'ensoleillement : ${data.forecast[0].sun_hours}H </li><li> Probabilité de pluie : ${data.forecast[0].tmax}% </li>`
+                div.innerHTML = `<h1>${data.city.name}</h1>
+                <h3>${weatherTab[data.forecast[0].weather]}
+                    <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
+                    <span>Pluie ${data.forecast[0].probarain}%</span>
+                </h3>
+                <h2>Minimale</h2>
+                <h2>${data.forecast[0].tmin}°C</h2>
+                <h2>Maximale</h2>
+                <h2>${data.forecast[0].tmax}°C</h2>
+                <div class="logo">
+                </div>`;
+
+                if(weatherTab[data.forecast[0].weather] == "Soleil") {
+                    div.innerHTML += "<img src='img/soleil.png' alt='sun'>";
+                }
             }
         })
 
