@@ -8,7 +8,6 @@ body {
     background-attachment: fixed;
 }
 
-
 h1 {
     text-align: center;
     font-size: 200%;
@@ -34,11 +33,13 @@ h2 {
     align-items: center;
     justify-content: center; 
     margin-bottom: 10px;
+    flex-wrap: wrap; /* Permet le passage à la ligne des éléments flexibles */
 }
 
 label {
     flex-shrink: 0;
-    margin-right: 10px;
+    margin-right: 1%;
+    margin-bottom: 10px; /* Ajout d'une marge en bas pour l'espacement */
 }
 
 /* Entrée du code postal */
