@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded",() => {
 
-    let ciytName = document.getElementById("")
+    let cityInsee = "14118" /*document.getElementById("insee").value*/
+    let div = document.getElementById("dropDownCard")
 
-    fetch('https://api.meteo-concept.com/api/location/city?token=52ebc4fdc1af7f1041b873d5f7c3140eaa23454977b3519f5f1110a3a8176c48&insee=35238')
+    fetch(`https://api.meteo-concept.com/api/forecast/daily?token=52ebc4fdc1af7f1041b873d5f7c3140eaa23454977b3519f5f1110a3a8176c48&insee=${cityInsee}`)
 
     .then(response => {
         if (!response.ok) {
@@ -12,10 +13,14 @@ document.addEventListener("DOMContentLoaded",() => {
     })
 
     .then(data => {
-        console.log(data);
+        if(!data.city.insee.length > 5 || !data.city.insee.length <5) 
+        {
+            div.innerHTML += `<ul> Temperature à ${data.city.name} <li> Température minimale : ${data.forecast[0].tmin}°C </li><li> Température maximale : ${data.forecast[0].tmax}°C </li><li> Heures d'ensoleillement : ${data.forecast[0].sun_hours}H </li><li> Probabilité de pluie : ${data.forecast[0].tmax}% </li>`
+        }
     })
 
     .catch(error => {
         console.error('There was a problem with the fetch operation',error);
     })
+
 })
