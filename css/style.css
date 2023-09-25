@@ -51,7 +51,7 @@ input[type="number"] {
     text-align: center;
 }
 
-button#researching {
+button#searchBtn {
     background-color: #007BFF;
     color: #fff;
     padding: 10px 20px;
@@ -63,6 +63,6 @@ button#researching {
     margin: 0 auto;
 }
 
-button#researching:hover {
+button#searchBtn:hover {
     background-color: #0056b3;
 }

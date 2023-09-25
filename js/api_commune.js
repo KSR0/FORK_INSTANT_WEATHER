@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function warnUserPostalCodeNotExisting() {
+        // Cree un signal visuel pour signaler à l'utilisateur un probleme
         console.error("Postal code not existing");
     }
     ///////
@@ -71,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-    document.querySelector("#researching").addEventListener("click", function() {
-        console.log(document.querySelector("#city-select").value);
-    });
+    
 
 });
