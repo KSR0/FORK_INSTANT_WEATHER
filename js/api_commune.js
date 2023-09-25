@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     ///////
     function createDropDownList() {
-        
+
     }
     ///////
     ///////
@@ -39,6 +39,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
 
+
     })
 
+    /*
+    <div class="drop_down_list">
+            <label for="city_select">Choisir une ville :</label>
+            <select name="cities" id="city-select">
+                <option value="14123">Ifs</option>
+            </select>
+        </div>
+    */
 });
