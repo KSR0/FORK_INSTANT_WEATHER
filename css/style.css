@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/sun_background.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 200%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 125%;
+}
+
+/* Cadre de recherche */
+.search_framework {
+    max-width: 60%; 
+    margin: 0 auto; 
+    padding: 20px;
+    border: 2px solid #5a5a5a;
+    border-radius: 10px;
+}
+
+/* Conteneur pour le label et l'input */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 10px;
+}
+
+label {
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+/* Entrée du code postal */
+input[type="number"] {
+    width: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+button#researching {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+button#researching:hover {
+    background-color: #0056b3;
+}
