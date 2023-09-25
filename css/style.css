@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Cadre de recherche */
+.search_framework {
+    max-width: 80%; 
+    margin: 0 auto; 
+    padding: 20px;
+    border: 2px solid #ccc; /* Ajout de la bordure */
+    border-radius: 10px; /* Coins arrondis */
+}
+
+form {
+    text-align: center;
+}
+
+/* Entrée du code postal */
+input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: center;
+}

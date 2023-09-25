@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api_meteo.js" defer></script>
+    <script src="js/api_commune.js" defer></script>
     <title>Instant Weather</title>
-    <script scr="js/api_meteo.js" defer></script>
-    <script scr="js/api_commune.js" defer></script>
 </head>
+
 <body>
     <h1>Instant Weather</h1>
     <div class="search_framework">
         <h2>La météo en direct de votre ville :</h2>
         <form id="city_searching">
             <label for="postal_code">Entrez un code postal : </label>
-            <input type="number" id="postal_code" min="00900" max="99999" value="Exemple : 14000">
+            <input type="number" id="postal_code" placeholder="Exemple : 14000">
         </form>
     </div>
 </body>
