@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     ///////
     function makeSearchBtnEnable() {
-        document.querySelector("#city_select").addEventListener("--trouver un truc--", () => {
+        document.querySelector("#city_select").addEventListener("change", () => { //modifier pour avoir un bon affichage
             document.querySelector("#searchBtn").disabled = false;
             document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
             document.querySelector("#searchBtn").style.cursor = "pointer";
@@ -68,10 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data != "") {
                     //console.log(data);
                     createDropDownList();
+                    document.querySelector("#city_select").innerHTML = `<option value="0">-- Selectionnez une ville --</option>`;
                     for (let ville of data) {
+                        
                         fillDropDownList(ville);
                     }
-                    makeSearchBtnEnable();
+                    /*
+                    if (document.querySelector("#city_select").value == "0") {
+                        console.log(false);
+                    } else {
+                        console.log(true);
+                        makeSearchBtnEnable();
+                    }
+                    */
                 } else {
                     warnUserPostalCodeNotExisting();
                 }
