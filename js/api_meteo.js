@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux","Très nuageux","Couvert","Brouillard","Brouillard givrant"]
 
-    searchBtn.addEventListener("click", function() {
-        cityInsee = document.querySelector("#city-select").value;
-        let div = document.getElementById("dropDownCard");
+    document.querySelector("#searchBtn").addEventListener("click", function() {
+        cityInsee = document.querySelector("#city_select").value;
+        let div = document.getElementById("dropDownCard")
 
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=52ebc4fdc1af7f1041b873d5f7c3140eaa23454977b3519f5f1110a3a8176c48&insee=${cityInsee}`)
 
