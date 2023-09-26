@@ -22,7 +22,7 @@ h2 {
 .search_framework {
     max-width: 60%; 
     margin: 0 auto; 
-    padding: 20px;
+    padding: 10px;
     border: 2px solid #5a5a5a;
     border-radius: 10px;
 }
@@ -30,6 +30,15 @@ h2 {
 /* Conteneur pour le label et l'input */
 .input-group {
     display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 10px;
+    flex-wrap: wrap; /* Permet le passage à la ligne des éléments flexibles */
+}
+
+.drop_down_list {
+    display: flex;
+    box-sizing: border-box;
     align-items: center;
     justify-content: center; 
     margin-bottom: 10px;
@@ -51,20 +60,25 @@ input[type="number"] {
     text-align: center;
 }
 
+/* Ajoutez ces styles pour les options */
+.city_select {
+    width: 220px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 15px;
+}
+
 button#searchBtn {
-    background-color: #007BFF;
+
+    background-color: grey;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     display: block;
     margin: 0 auto;
-}
-
-button#searchBtn:hover {
-    background-color: #0056b3;
+    margin-bottom: 10px;
 }
 
 #dropDownCardChild {
@@ -83,10 +97,6 @@ span {
     color: #999;
     font-weight: 300;
     font-size: 0.9em;
-}
-
-span span {
-    margin-left: 0;
 }
 
 h3 {
