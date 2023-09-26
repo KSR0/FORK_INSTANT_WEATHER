@@ -18,21 +18,19 @@ document.addEventListener("DOMContentLoaded",() => {
         .then(data => {
             if(!data.city.insee.length > 5 || !data.city.insee.length <5) 
             {
-                div.innerHTML = `<h1>${data.city.name}</h1>
-                <h3>${weatherTab[data.forecast[0].weather]}
-                    <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
-                    <span>Pluie ${data.forecast[0].probarain}%</span>
-                </h3>
-                <h2>Minimale</h2>
-                <h2>${data.forecast[0].tmin}°C</h2>
-                <h2>Maximale</h2>
-                <h2>${data.forecast[0].tmax}°C</h2>
-                <div class="logo">
-                </div>`;
-
-                if(weatherTab[data.forecast[0].weather] == "Soleil") {
-                    div.innerHTML += "<img src='img/soleil.png' alt='sun'>";
-                }
+                div.innerHTML = `
+                <div id="dropDownCardChild">
+                    <h1>${data.city.name}</h1>
+                    <h3>${weatherTab[data.forecast[0].weather]}
+                        <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
+                        <span>Pluie ${data.forecast[0].probarain}%</span>
+                    </h3>
+                    <h2>Minimale</h2>
+                    <h2>${data.forecast[0].tmin}°C</h2>
+                    <h2>Maximale</h2>
+                    <h2>${data.forecast[0].tmax}°C</h2>
+                </div>
+                `;
             }
         })
 
