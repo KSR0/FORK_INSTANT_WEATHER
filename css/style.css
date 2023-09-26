@@ -69,21 +69,21 @@ input[type="number"] {
 }
 
 button#searchBtn {
-    background-color: #007BFF;
+
+    background-color: grey;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
-button#searchBtn:hover {
+/*button#searchBtn:hover {
     background-color: #0056b3;
-}
+}*/
 
 #dropDownCardChild {
     margin: 0 auto;
@@ -101,10 +101,6 @@ span {
     color: #999;
     font-weight: 300;
     font-size: 0.9em;
-}
-
-span span {
-    margin-left: 0;
 }
 
 h3 {
