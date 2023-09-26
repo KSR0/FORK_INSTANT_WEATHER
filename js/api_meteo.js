@@ -1,10 +1,12 @@
-document.addEventListener("DOMContentLoaded",() => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux"]
+    searchBtn = document.querySelector("#searchBtn")
 
-    document.querySelector("#searchBtn").addEventListener("click", function() {
+    const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux","Très nuageux","Couvert","Brouillard","Brouillard givrant"]
+
+    searchBtn.addEventListener("click", function() {
         cityInsee = document.querySelector("#city-select").value;
-        let div = document.getElementById("dropDownCard")
+        let div = document.getElementById("dropDownCard");
 
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=52ebc4fdc1af7f1041b873d5f7c3140eaa23454977b3519f5f1110a3a8176c48&insee=${cityInsee}`)
 
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded",() => {
                 div.innerHTML = `
                 <div id="dropDownCardChild">
                     <h1>${data.city.name}</h1>
-                    <h3>${weatherTab[data.forecast[0].weather]}
+                    <h3>${data.forecast[0].weather}
                         <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
                         <span>Pluie ${data.forecast[0].probarain}%</span>
                     </h3>
