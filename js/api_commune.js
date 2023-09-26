@@ -6,16 +6,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function fillDropDownList(donnee_ville) {
-        document.querySelector("#city-select").innerHTML += 
+        document.querySelector("#city_select").innerHTML += 
             `
-            <option value="${donnee_ville.code}">${donnee_ville.nom}</option>
+            <option value="${donnee_ville.code}" id="test">${donnee_ville.nom}</option>
             `;
     }
 
     function createDropDownList() {
         document.querySelector(".drop_down_list").innerHTML = 
-            `<label for="city_select">Choisir une ville :</label>
-            <select name="cities" id="city-select">
+            `<label for="city_select" id="city_select_label">Choisir une ville :</label>
+            <select name="cities" id="city_select">
             </select>`;
     }
     ///////
@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     for (let ville of data) {
                         fillDropDownList(ville);
                     }
+                    //makeSearchBtnEnable();
                 } else {
                     warnUserPostalCodeNotExisting();
                 }
