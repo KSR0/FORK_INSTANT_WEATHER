@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function fillDropDownList(donnee_ville) {
         document.querySelector("#city_select").innerHTML += 
             `
-            <option value="${donnee_ville.code}" id="test">${donnee_ville.nom}</option>
+            <option value="${donnee_ville.code}" >${donnee_ville.nom}</option>
             `;
     }
 
     function createDropDownList() {
         document.querySelector(".drop_down_list").innerHTML = 
             `<label for="city_select" id="city_select_label">Choisir une ville :</label>
-            <select name="cities" id="city_select">
+            <select name="cities" id="city_select" class="city_select">
             </select>`;
     }
     ///////
