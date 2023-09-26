@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     ///////
     function makeSearchBtnEnable() {
-        document.querySelector("#city_select").addEventListener("--trouver un truc--", () => {
+        document.querySelector("#city_select").addEventListener("change", () => {
             document.querySelector("#searchBtn").disabled = false;
             document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
             document.querySelector("#searchBtn").style.cursor = "pointer";
