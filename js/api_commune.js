@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     ///////
     function makeSearchBtnEnable() {
-        document.querySelector("#city_select").addEventListener("--trouver un truc--", () => {
+        document.querySelector("#city_select").addEventListener("change", () => {
             document.querySelector("#searchBtn").disabled = false;
             document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
             document.querySelector("#searchBtn").style.cursor = "pointer";
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createDropDownList() {
         document.querySelector(".drop_down_list").innerHTML = 
-            `<label for="city_select" id="city_select_label">Choisir une ville :</label>
+            `<label for="city_select" id="label_style">Choisissez une ville :</label>
             <select name="cities" id="city_select" class="city_select">
             </select>`;
     }
