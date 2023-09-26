@@ -2,9 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
     
     ///////
     function makeSearchBtnEnable() {
-        document.querySelector("#city_select").addEventListener("change", () => {
+        document.querySelector("#city_select").addEventListener("--trouver un truc--", () => {
             document.querySelector("#searchBtn").disabled = false;
+            document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
+            document.querySelector("#searchBtn").style.cursor = "pointer";
+            document.querySelector("#searchBtn").addEventListener("mouseleave", function( event ) {   
+                event.target.style.backgroundColor = "#007BFF";
+            });
+            document.querySelector("#searchBtn").addEventListener("mouseenter", function( event ) {   
+                event.target.style.backgroundColor = "#0056b3";
+            });
         });
+        
     }
     ///////
 
