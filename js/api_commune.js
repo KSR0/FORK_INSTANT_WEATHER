@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     
     ///////
+    function makeSearchBtnEnable() {
+        document.querySelector("#city_select").addEventListener("change", () => {
+            document.querySelector("#searchBtn").disabled = false;
+        });
+    }
+    ///////
+
+    ///////
     function eraseDropDownList() {
         document.querySelector(".drop_down_list").innerHTML = ``;
     }
@@ -54,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     for (let ville of data) {
                         fillDropDownList(ville);
                     }
-                    //makeSearchBtnEnable();
+                    makeSearchBtnEnable();
                 } else {
                     warnUserPostalCodeNotExisting();
                 }
