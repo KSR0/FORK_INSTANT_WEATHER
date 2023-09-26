@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     for (let ville of data) {
                         fillDropDownList(ville);
                     }
-                    //makeSearchBtnEnable();
                 } else {
                     warnUserPostalCodeNotExisting();
                 }
