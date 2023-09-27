@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             document.querySelector("#searchBtn").disabled = true;
             document.querySelector("#searchBtn").style.backgroundColor = "grey";
-            document.querySelector("#searchBtn").style.cursor = "auto";
+            document.querySelector("#searchBtn").style.cursor = "not-allowed";
             document.querySelector("#searchBtn").removeEventListener("mouseenter", changeBackgroundColorMouseEnter);
             document.querySelector("#searchBtn").removeEventListener("mouseleave", changeBackgroundColorMouseLeave);
         } catch (error) {
