@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ///////
     function changeBackgroundColorMouseEnter() {
         document.querySelector("#searchBtn").style.backgroundColor = "#0056b3";
+        document.querySelector("#searchBtn").style.transform = "translateY(-2px)";
     }
     function changeBackgroundColorMouseLeave() {
         document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
+        document.querySelector("#searchBtn").style.transform = "translateY(0px)";
     }
     ///////
 
