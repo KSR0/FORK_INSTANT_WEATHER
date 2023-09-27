@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded",() => {
 
         .then(data => {
             if(!data.city.insee.length > 5 || !data.city.insee.length <5) 
+            console.log(data);
             {
                 div.innerHTML = `
                 <div id="dropDownCardChild">

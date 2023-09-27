@@ -64,15 +64,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     ///////
+    function displayError() {
+        document.querySelector(".errorWarning").style.display = "block";
+        document.querySelector(".errorWarning").style.opacity = 1;
+    }
+    function hideError() {
+        document.querySelector(".errorWarning").style.display = "none";
+        document.querySelector(".errorWarning").style.opacity = 0;
+    }
     function warnUserPostalCodeNotValid() {
         // Cree un signal visuel pour signaler à l'utilisateur un probleme
-        console.error("Postal code not valid");
+        document.querySelector("#p_error").innerHTML = "Code postal invalide !";
+        displayError();
         makeSearchBtnOff(); // Permet de ne pas avoir le bouton encore actif après avoir changé le CP(car le cp n'est plus valide). 
     }
     function warnUserPostalCodeNotExisting() {
         // Cree un signal visuel pour signaler à l'utilisateur un probleme
-        console.error("Postal code not existing");
+        document.querySelector("#p_error").innerHTML = "Code postal inexistant !";
+        //console.error("Postal code not existing");
         makeSearchBtnOff(); // Permet de ne pas avoir le bouton encore actif après avoir changé le CP(car le cp n'est plus valide).
+        displayError();
     }
     ///////
 
@@ -100,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.querySelector("#city_select").addEventListener("change", () => {
                         makeSearchBtnEnable();
                     });
+                    hideError();
                 } else {
                     warnUserPostalCodeNotExisting();
                 }
@@ -107,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => {
                 console.error(error);
             });
+            hideError();
         } else {
             eraseDropDownList();
             warnUserPostalCodeNotValid();
