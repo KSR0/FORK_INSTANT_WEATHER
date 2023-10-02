@@ -1,53 +1,91 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     ///////
-    function makeSearchBtnEnable() {
-        document.querySelector("#city_select").addEventListener("change", () => {
-            document.querySelector("#searchBtn").disabled = false;
-            document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
-            document.querySelector("#searchBtn").style.cursor = "pointer";
-            document.querySelector("#searchBtn").addEventListener("mouseleave", function( event ) {   
-                event.target.style.backgroundColor = "#007BFF";
-            });
-            document.querySelector("#searchBtn").addEventListener("mouseenter", function( event ) {   
-                event.target.style.backgroundColor = "#0056b3";
-            });
-        });
-        
+    function changeBackgroundColorMouseEnter() {
+        document.querySelector("#searchBtn").style.backgroundColor = "#0056b3";
+        document.querySelector("#searchBtn").style.transform = "translateY(-2px)";
+    }
+    function changeBackgroundColorMouseLeave() {
+        document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
+        document.querySelector("#searchBtn").style.transform = "translateY(0px)";
     }
     ///////
+
+
+    ///////
+    function makeSearchBtnOn() {
+        document.querySelector("#searchBtn").disabled = false;
+        document.querySelector("#searchBtn").style.backgroundColor = "#007BFF";
+        document.querySelector("#searchBtn").style.cursor = "pointer";
+        
+        document.querySelector("#searchBtn").addEventListener("mouseenter", changeBackgroundColorMouseEnter);
+        document.querySelector("#searchBtn").addEventListener("mouseleave", changeBackgroundColorMouseLeave);
+    }
+    function makeSearchBtnOff() {
+        try {
+            document.querySelector("#searchBtn").disabled = true;
+            document.querySelector("#searchBtn").style.backgroundColor = "grey";
+            document.querySelector("#searchBtn").style.cursor = "not-allowed";
+            document.querySelector("#searchBtn").removeEventListener("mouseenter", changeBackgroundColorMouseEnter);
+            document.querySelector("#searchBtn").removeEventListener("mouseleave", changeBackgroundColorMouseLeave);
+        } catch (error) {
+            
+        }
+    }
+    ///////
+    
+
+    ///////
+    function makeSearchBtnEnable() {
+        if (document.querySelector("#city_select").value != 0) {
+            makeSearchBtnOn();
+        } else {
+            makeSearchBtnOff();
+        }
+    }
+    ///////
+
 
     ///////
     function eraseDropDownList() {
         document.querySelector(".drop_down_list").innerHTML = ``;
     }
-
     function fillDropDownList(donnee_ville) {
         document.querySelector("#city_select").innerHTML += 
             `
             <option value="${donnee_ville.code}" >${donnee_ville.nom}</option>
             `;
     }
-
     function createDropDownList() {
         document.querySelector(".drop_down_list").innerHTML = 
-            `<label for="city_select" id="city_select_label">Choisir une ville :</label>
+            `<label for="city_select" id="label_style">Choisissez une ville :</label>
             <select name="cities" id="city_select" class="city_select">
             </select>`;
     }
     ///////
 
 
-
     ///////
+    function displayError() {
+        document.querySelector(".errorWarning").style.display = "block";
+        document.querySelector(".errorWarning").style.opacity = 1;
+    }
+    function hideError() {
+        document.querySelector(".errorWarning").style.display = "none";
+        document.querySelector(".errorWarning").style.opacity = 0;
+    }
     function warnUserPostalCodeNotValid() {
         // Cree un signal visuel pour signaler à l'utilisateur un probleme
-        console.error("Postal code not valid");
+        document.querySelector("#p_error").innerHTML = "Code postal invalide !";
+        displayError();
+        makeSearchBtnOff(); // Permet de ne pas avoir le bouton encore actif après avoir changé le CP(car le cp n'est plus valide). 
     }
-
     function warnUserPostalCodeNotExisting() {
         // Cree un signal visuel pour signaler à l'utilisateur un probleme
-        console.error("Postal code not existing");
+        document.querySelector("#p_error").innerHTML = "Code postal inexistant !";
+        //console.error("Postal code not existing");
+        makeSearchBtnOff(); // Permet de ne pas avoir le bouton encore actif après avoir changé le CP(car le cp n'est plus valide).
+        displayError();
     }
     ///////
 
@@ -68,10 +106,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data != "") {
                     //console.log(data);
                     createDropDownList();
+                    document.querySelector("#city_select").innerHTML = `<option value="0">-- Selectionnez une ville --</option>`;
                     for (let ville of data) {
                         fillDropDownList(ville);
                     }
-                    makeSearchBtnEnable();
+                    document.querySelector("#city_select").addEventListener("change", () => {
+                        makeSearchBtnEnable();
+                    });
+                    hideError();
                 } else {
                     warnUserPostalCodeNotExisting();
                 }
@@ -79,17 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => {
                 console.error(error);
             });
+            hideError();
         } else {
             eraseDropDownList();
             warnUserPostalCodeNotValid();
         }
-
-        
-        
-
-
     })
-
-    
-
 });

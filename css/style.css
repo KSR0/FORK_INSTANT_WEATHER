@@ -20,8 +20,9 @@ h2 {
 
 /* Cadre de recherche */
 .search_framework {
-    max-width: 60%; 
-    margin: 0 auto; 
+    max-width: 70%; 
+    margin-right: auto;
+    margin-left: auto;
     padding: 10px;
     border: 2px solid #5a5a5a;
     border-radius: 10px;
@@ -45,40 +46,54 @@ h2 {
     flex-wrap: wrap; /* Permet le passage à la ligne des éléments flexibles */
 }
 
-label {
+#label_style {
+    color :rgb(0, 0, 0);
+    font-size: 15px;
     flex-shrink: 0;
     margin-right: 1%;
     margin-bottom: 10px; /* Ajout d'une marge en bas pour l'espacement */
 }
 
 /* Entrée du code postal */
-input[type="number"] {
+#postal_code {
     width: 150px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 6px;
     font-size: 15px;
     text-align: center;
+    margin-top: -10px;
+    color:rgb(9, 135, 214);
+    
 }
 
 /* Ajoutez ces styles pour les options */
+.city_select option {
+    color:rgb(9, 135, 214);
+}
+
 .city_select {
     width: 220px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 6px;
     font-size: 15px;
+    margin-top: -10px;
+    color:rgb(9, 135, 214);
 }
 
-button#searchBtn {
-
+#searchBtn {
     background-color: grey;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     display: block;
-    margin: 0 auto;
+    margin-top: 14px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
+    cursor: not-allowed;
+    transition: all 0.4s;
 }
 
 #dropDownCardChild {
@@ -108,7 +123,6 @@ h3 {
     margin-bottom: 20px;
     margin-top: 0;
     width: 100%;
-
 }
 
 img {
@@ -118,5 +132,37 @@ img {
     margin: 0 auto;
     display: block;
     margin-top: 10px;
+}
+
+.errorWarning {
+    color: red;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    display: none;
+    opacity: 0;
     
+}
+
+
+@keyframes moveAndGrow {
+    0% {
+        transform: translateY(0px);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: translateY(2px);
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+#p_error {
+    margin-top: 0;
+    animation: moveAndGrow 2s ease-in-out infinite;
 }
