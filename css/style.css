@@ -92,6 +92,10 @@ h2 {
     border-radius: 20px;
 }
 
+#postal_code::placeholder {
+    color: #dfdfdf;
+}
+
 #city_select {
     width: 220px;
     box-sizing: border-box;
