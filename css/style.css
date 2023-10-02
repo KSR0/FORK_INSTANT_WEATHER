@@ -19,7 +19,7 @@ h2 {
 }
 
 /* Cadre de recherche */
-.search_framework {
+#search_framework {
     max-width: 70%; 
     margin-right: auto;
     margin-left: auto;
@@ -29,7 +29,7 @@ h2 {
 }
 
 /* Conteneur pour le label et l'input */
-.input-group {
+#input-group {
     display: flex;
     align-items: center;
     justify-content: center; 
@@ -37,7 +37,7 @@ h2 {
     flex-wrap: wrap; /* Permet le passage à la ligne des éléments flexibles */
 }
 
-.drop_down_list {
+#drop_down_list {
     display: flex;
     box-sizing: border-box;
     align-items: center;
@@ -66,12 +66,7 @@ h2 {
     
 }
 
-/* Ajoutez ces styles pour les options */
-.city_select option {
-    color:rgb(9, 135, 214);
-}
-
-.city_select {
+#city_select {
     width: 220px;
     box-sizing: border-box;
     padding: 6px;
@@ -134,7 +129,7 @@ img {
     margin-top: 10px;
 }
 
-.errorWarning {
+#errorWarning {
     color: red;
     margin-left: auto;
     margin-right: auto;
