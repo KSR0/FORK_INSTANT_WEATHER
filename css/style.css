@@ -166,3 +166,11 @@ img {
     margin-top: 0;
     animation: moveAndGrow 2s ease-in-out infinite;
 }
+
+i {
+    color: #999;
+    font-size: 1.2em;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: left;
+}

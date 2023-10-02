@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchBtn = document.querySelector("#searchBtn")
 
+    let img = new Image();
+    img.src = "../img/meteo.png";
+
     const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux","Très nuageux","Couvert","Brouillard","Brouillard givrant"]
 
     document.querySelector("#searchBtn").addEventListener("click", function() {
@@ -19,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         .then(data => {
             if(!data.city.insee.length > 5 || !data.city.insee.length <5) 
-            console.log(data);
             {
                 div.innerHTML = `
                 <div id="dropDownCardChild">
@@ -32,8 +34,52 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h2>${data.forecast[0].tmin}°C</h2>
                     <h2>Maximale</h2>
                     <h2>${data.forecast[0].tmax}°C</h2>
+                    <i class = "wi"></i>
                 </div>
-                `;
+                `
+
+                function changeClass(change) {
+                    document.querySelector(".wi").classList.add(change)
+                }
+
+                switch(data.forecast[0].weather) {
+                    case 0:
+                        changeClass("wi-day-sunny")
+                        break;
+                    case 1:
+                        changeClass("wi-day-cloudy")
+                        break;
+                    case 2:
+                        changeClass("wi-day-cloudy-high")
+                        break;
+                    case 3:
+                        changeClass("wi-cloud")
+                        break;
+                    case 4-5:
+                        changeClass("wi-cloudy")
+                        break;
+                    case 6-7:
+                        changeClass("wi-fog")
+                        break;
+                    case 10-15,30-32:
+                        changeClass("wi-rain-mix")
+                        break;
+                    case 16:
+                        changeClass("wi-hail")
+                        break;
+                    case 20-22,142,220-222:
+                        changeClass("wi-snow")
+                        break;
+                    case 40-78:
+                        changeClass("wi-rain")
+                        break;
+                    case 100-138:
+                        changeClass("wi-lgihning")
+                        break;
+                    case 142,220-232:
+                        changeClass("wi-snow")
+                        break;
+                }
             }
         })
 
