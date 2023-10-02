@@ -9,12 +9,16 @@
     <title>Instant Weather</title>
     <link rel="icon" type="image/x-icon" href="/img/cloudy.ico">
     <script src="https://kit.fontawesome.com/7509b7dacb.js" crossorigin="anonymous" defer></script> <!-- // Font Awesome-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Instant Weather</h1>
+    <div>
+    <h1 id="title">Instant Weather</h1>
     <div class="search_framework">
-        <h2>La météo en direct de votre ville :</h2>
+        <h2 id="web_site_description">La météo en direct de votre ville :</h2>
         <form id="city_searching" onsubmit="return false;">
             <div class="input-group">
                 <label for="postal_code">Entrez un code postal :</label>
@@ -31,6 +35,7 @@
     </div>
     <div id="dropDownCard">
         
+    </div>
     </div>
 </body>
 </html>
