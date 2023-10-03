@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded",() => {
             {
                 div.innerHTML = `
                 <div id="dropDownCardChild">
-                    <h1>${data.city.name}</h1>
+                    <h2>${data.city.name}</h2>
                     <h3>${weatherTab[data.forecast[0].weather]}
                         <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
                         <span>Pluie ${data.forecast[0].probarain}%</span>
