@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+import weatherMap from "./weatherMap.js"
+import iconsMap from "./iconsMap.js"
 
-    searchBtn = document.querySelector("#searchBtn")
+document.addEventListener("DOMContentLoaded", () => {
 
     let img = new Image();
     img.src = "../img/meteo.png";
-
-    const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux","Très nuageux","Couvert","Brouillard","Brouillard givrant"]
+    let cityInsee;
 
     document.querySelector("#searchBtn").addEventListener("click", function() {
         cityInsee = document.querySelector("#city_select").value;
@@ -21,12 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         .then(data => {
+
+            console.log(data.forecast[0].weather)
             if(!data.city.insee.length > 5 || !data.city.insee.length <5) 
             {
                 div.innerHTML = `
                 <div id="dropDownCardChild">
                     <h1>${data.city.name}</h1>
-                    <h3>${weatherTab[data.forecast[0].weather]}
+                    <h3>${weatherMap[data.forecast[0].weather]}
                         <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
                         <span>Pluie ${data.forecast[0].probarain}%</span>
                     </h3>
@@ -37,49 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <i class = "wi"></i>
                 </div>
                 `
-
-                function changeClass(change) {
-                    document.querySelector(".wi").classList.add(change)
-                }
-
-                switch(data.forecast[0].weather) {
-                    case 0:
-                        changeClass("wi-day-sunny")
-                        break;
-                    case 1:
-                        changeClass("wi-day-cloudy")
-                        break;
-                    case 2:
-                        changeClass("wi-day-cloudy-high")
-                        break;
-                    case 3:
-                        changeClass("wi-cloud")
-                        break;
-                    case 4-5:
-                        changeClass("wi-cloudy")
-                        break;
-                    case 6-7:
-                        changeClass("wi-fog")
-                        break;
-                    case 10-15,30-32:
-                        changeClass("wi-rain-mix")
-                        break;
-                    case 16:
-                        changeClass("wi-hail")
-                        break;
-                    case 20-22,142,220-222:
-                        changeClass("wi-snow")
-                        break;
-                    case 40-78:
-                        changeClass("wi-rain")
-                        break;
-                    case 100-138:
-                        changeClass("wi-lgihning")
-                        break;
-                    case 142,220-232:
-                        changeClass("wi-snow")
-                        break;
-                }
+                document.querySelector(".wi").classList.add(iconsMap[data.forecast[0].weather])
             }
         })
 
