@@ -191,6 +191,14 @@ h2 {
     font-size: 1.2em;
 }
 
+#weather {
+    font-size: 4em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+
 .temperature {
     font-size: 1.1em;
     color: #ffffff;

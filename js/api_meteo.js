@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h2 id="day">${formattedDate}</h2>
                     <p id="city_selected" class="bold">${data.city.name}</p>
                     <p id="actual_weather">${weatherMap[data.forecast[0].weather]}</p>
+                    
+                    <div>
+                            <i id="weather" class = "wi"></i>
+                    </div>
 
                     <p class="temperature">
                         <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
@@ -69,10 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <i class="fa-solid fa-droplet fa-beat-fade fa-xl" style="color: #c7d8fa;"></i>
                                    Pluie :<span id="raining_pourcentage_value" class="bold">${data.forecast[0].probarain}%</span>
                             </p>
-                        </div>
-
-                        <div>
-                            <i id="weather" class = "wi"></i>
                         </div>
                     
                     </div>
