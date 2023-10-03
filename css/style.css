@@ -191,6 +191,14 @@ h2 {
     font-size: 1.2em;
 }
 
+#weather {
+    font-size: 4em;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-top: -5px;
+}
+
 .temperature {
     font-size: 1.1em;
     color: #ffffff;
@@ -450,24 +458,20 @@ img {
         text-align: center;
         padding-right: 0%;
     }
-}
 
-#weather {
-    font-size: 3em
-}
-
-#sun_time {
-    font-size: 0.8em;
-}
+    #sun_time {
+        font-size: 0.8em;
+    }
     
-#sun_time_value {
-    font-size: 1.1em;
-}
+    #sun_time_value {
+        font-size: 1.1em;
+    }
     
-#raining_pourcentage {
-    font-size: 0.8em;
-}
+    #raining_pourcentage {
+        font-size: 0.8em;
+    }
     
-#raining_pourcentage_value {
-    font-size: 1.1em;
+    #raining_pourcentage_value {
+        font-size: 1.1em;
+    }
 }
