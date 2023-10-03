@@ -34,10 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const formattedDate = `${dayOfWeek} ${dayOfMonth.toString().padStart(2, '0')} ${month} ${year}`;
 
             div.innerHTML = `
-                <p id="city_selected">Ville sélectionnée :<span class="bold underline">${data.city.name}</span></p>
-
                 <div id="dropDownCardChild">
                     <h2 id="day" class="underline">${formattedDate}</h2>
+                    <p id="city_selected" class="bold underline">${data.city.name}</span></p>
                     <p id="temperature">Temp° minimale : <span id="temperature_min">${data.forecast[0].tmin}°C</span></p>
                     <p id="temperature">Temp° maximale : <span id="temperature_max"> ${data.forecast[0].tmax}°C</span></p>
                     <p>${weatherTab[data.forecast[0].weather]}
