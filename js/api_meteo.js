@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p id="city_selected" class="bold">${data.city.name}</p>
                     <p id="actual_weather">${weatherMap[data.forecast[0].weather]}</p>
 
-                    <p id="temperature">
-                        <i class="fa-solid fa-temperature-high fa-xl" style="color: #24e5ff;"></i>
+                    <p class="temperature">
+                        <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
                         <span id="temperature_min">${data.forecast[0].tmin}°C</span>
                     </p>
 
-                    <p id="temperature">
-                        <i class="fa-solid fa-temperature-low fa-xl" style="color: #ff5024;"></i>
+                    <p class="temperature">
+                        <i class="fa-solid fa-temperature-high fa-xl" style="color: #ff5024;"></i>
                         <span id="temperature_max"> ${data.forecast[0].tmax}°C</span>
                     <p>
 
@@ -60,14 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div id="sun_time">
                             <p>
                                 <i class="fa-solid fa-sun fa-spin fa-xl" style="color: #ffe75f;"></i>
-                                 Durée d'ensoleillement :<span id="sun_time_value" class="bold underline">${data.forecast[0].sun_hours}H</span>
+                                 Durée d'ensoleillement :<span id="sun_time_value" class="bold">${data.forecast[0].sun_hours}H</span>
                             </p>
                         </div>
 
                         <div id="raining_pourcentage">
                             <p>
                                 <i class="fa-solid fa-droplet fa-beat-fade fa-xl" style="color: #c7d8fa;"></i>
-                                   Pluie :<span id="raining_pourcentage_value" class="bold underline">${data.forecast[0].probarain}%</span>
+                                   Pluie :<span id="raining_pourcentage_value" class="bold">${data.forecast[0].probarain}%</span>
                             </p>
                         </div>
 

@@ -9,17 +9,10 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    
 }
 
 .bold {
     font-weight: bold;
-    color:black;
-}
-
-.underline {
-    text-decoration: underline;
-    color:black;
 }
 
 #title {
@@ -88,6 +81,17 @@ h2 {
 #postal_code::placeholder {
     color: #dfdfdf;
 }
+
+#postal_code[type="number"]::-webkit-inner-spin-button {
+    display: none;
+ }
+
+ /* Fallback for other browsers */
+ #postal_code[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+ }
 
 #drop_down_list {
     margin-bottom: 10px;
@@ -187,7 +191,7 @@ h2 {
     font-size: 1.2em;
 }
 
-#temperature {
+.temperature {
     font-size: 1.1em;
     color: #ffffff;
     font-weight: bold;
@@ -195,14 +199,16 @@ h2 {
 
 #temperature_min {
     color: #24e5ff;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: bold;
+    margin-left: -5px;
 }
 
 #temperature_max {
     color: #ff5024;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: bold;
+    margin-left: -5px;
 }
 
 #sun_and_rain {
@@ -214,6 +220,7 @@ h2 {
     color: #ffe75f;
     width: 45%;
     margin-left: 5%;
+    font-size: 1em;
 }
 
 #sun_time_value {
@@ -225,6 +232,7 @@ h2 {
     color: #c7d8fa;
     width: 45%;
     margin-right: 5%;
+    font-size: 1em;
 }
 
 #raining_pourcentage_value {
@@ -233,7 +241,7 @@ h2 {
 }
 
 i {
-    margin-right: 1%;
+    margin-right: 5px;
 }
 
 span {
@@ -370,6 +378,23 @@ img {
         text-align: center;
         padding-right: 0%;
     }
+
+    #sun_time {
+        font-size: 0.9em;
+    }
+    
+    #sun_time_value {
+        font-size: 1.1em;
+    }
+    
+    #raining_pourcentage {
+        font-size: 0.9em;
+    }
+    
+    #raining_pourcentage_value {
+        font-size: 1.1em;
+    }
+
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -394,6 +419,22 @@ img {
         text-align: center;
         padding-right: 0%;
     }
+
+    #sun_time {
+        font-size: 0.85em;
+    }
+    
+    #sun_time_value {
+        font-size: 1.1em;
+    }
+    
+    #raining_pourcentage {
+        font-size: 0.85em;
+    }
+    
+    #raining_pourcentage_value {
+        font-size: 1.1em;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
@@ -413,4 +454,20 @@ img {
 
 #weather {
     font-size: 3em
+}
+
+#sun_time {
+    font-size: 0.8em;
+}
+    
+#sun_time_value {
+    font-size: 1.1em;
+}
+    
+#raining_pourcentage {
+    font-size: 0.8em;
+}
+    
+#raining_pourcentage_value {
+    font-size: 1.1em;
 }
