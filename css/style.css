@@ -156,9 +156,8 @@ h2 {
     animation: moveAndGrow 2s ease-in-out infinite;
 }
 
-#actualisation {
-    color:black;
-    font-size: 1.1em;
+#city_selected {
+    font-size: 1.3em;
 }
 
 #dropDownCardChild {
@@ -173,8 +172,7 @@ h2 {
 
 #day {
     font-size: 1.4em;
-    color:#00303c;
-    text-shadow: #ffffff 1px 1px;
+    color:#ececec;
 }
 
 #temperature {
@@ -209,6 +207,13 @@ h3 {
     font-weight: 400;
     text-align: center;
     width: 100%;
+}
+
+#actualisation {
+    color:black;
+    font-size: 0.9em;
+    text-align: right;
+    padding-right: 5%;
 }
 
 img {
@@ -317,6 +322,11 @@ img {
     #dropDownCardChild {
         width: 85%;
     }
+
+    #actualisation {
+        text-align: center;
+        padding-right: 0%;
+    }
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -336,6 +346,11 @@ img {
     #dropDownCardChild {
         width: 90%;
     }
+
+    #actualisation {
+        text-align: center;
+        padding-right: 0%;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
@@ -345,5 +360,10 @@ img {
 
     h2 {
         font-size: 1.08em;
+    }
+
+    #actualisation {
+        text-align: center;
+        padding-right: 0%;
     }
 }
