@@ -450,24 +450,20 @@ img {
         text-align: center;
         padding-right: 0%;
     }
-}
 
-#weather {
-    font-size: 3em
-}
-
-#sun_time {
-    font-size: 0.8em;
-}
+    #sun_time {
+        font-size: 0.8em;
+    }
     
-#sun_time_value {
-    font-size: 1.1em;
-}
+    #sun_time_value {
+        font-size: 1.1em;
+    }
     
-#raining_pourcentage {
-    font-size: 0.8em;
-}
+    #raining_pourcentage {
+        font-size: 0.8em;
+    }
     
-#raining_pourcentage_value {
-    font-size: 1.1em;
+    #raining_pourcentage_value {
+        font-size: 1.1em;
+    }
 }
