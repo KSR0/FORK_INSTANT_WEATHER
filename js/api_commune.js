@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ///////
     function eraseDropDownList() {
-        document.querySelector(".drop_down_list").innerHTML = ``;
+        document.querySelector("#drop_down_list").innerHTML = ``;
     }
     function fillDropDownList(donnee_ville) {
         document.querySelector("#city_select").innerHTML += 
@@ -57,9 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
     }
     function createDropDownList() {
-        document.querySelector(".drop_down_list").innerHTML = 
+        document.querySelector("#drop_down_list").innerHTML = 
             `<label for="city_select" id="label_style">Choisissez une ville :</label>
-            <select name="cities" id="city_select" class="city_select">
+            <select name="cities" id="city_select">
             </select>`;
     }
     ///////
@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ///////
     function displayError() {
-        document.querySelector(".errorWarning").style.display = "block";
-        document.querySelector(".errorWarning").style.opacity = 1;
+        document.querySelector("#errorWarning").style.display = "block";
+        document.querySelector("#errorWarning").style.opacity = 1;
     }
     function hideError() {
-        document.querySelector(".errorWarning").style.display = "none";
-        document.querySelector(".errorWarning").style.opacity = 0;
+        document.querySelector("#errorWarning").style.display = "none";
+        document.querySelector("#errorWarning").style.opacity = 0;
     }
     function warnUserPostalCodeNotValid() {
         // Cree un signal visuel pour signaler à l'utilisateur un probleme

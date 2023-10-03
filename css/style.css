@@ -1,140 +1,135 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../img/sun_background.jpg'); 
+    color:#ffffff;
+    text-align: center;
+    font-size: 1em;
+    margin: 2px;
+    padding: 2px;
+    background-image: url('../img/bg_sky3.png');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+    
 }
 
-h1 {
+.bold {
+    font-weight: bold;
+    color:black;
+}
+
+.underline {
+    text-decoration: underline;
+    color:black;
+}
+
+#title {
+    /*font-family: 'Neuton', serif;*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    margin: 0.3em;
+    padding-bottom: 2%;
+    text-shadow: #005064 1px 2px;
+}
+
+#web_site_description,
+h2 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#city_name {
     text-align: center;
     font-size: 200%;
 }
 
-h2 {
-    text-align: center;
-    font-size: 125%;
-}
-
 /* Cadre de recherche */
-.search_framework {
-    max-width: 70%; 
+#search_framework {
+    background-color: rgba(0, 30, 39, 0.3);
     margin-right: auto;
     margin-left: auto;
     padding: 10px;
-    border: 2px solid #5a5a5a;
+    padding-bottom: 15px;
+    margin-bottom: 2%;
+    border: 2px solid #ffffff;
     border-radius: 10px;
 }
 
 /* Conteneur pour le label et l'input */
-.input-group {
+#input-group {
+    margin-bottom: 17px;
     display: flex;
     align-items: center;
     justify-content: center; 
-    margin-bottom: 10px;
-    flex-wrap: wrap; /* Permet le passage à la ligne des éléments flexibles */
-}
-
-.drop_down_list {
-    display: flex;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center; 
-    margin-bottom: 10px;
-    flex-wrap: wrap; /* Permet le passage à la ligne des éléments flexibles */
+    flex-wrap: wrap;
 }
 
 #label_style {
-    color :rgb(0, 0, 0);
-    font-size: 15px;
+    font-size: 1em;
     flex-shrink: 0;
     margin-right: 1%;
-    margin-bottom: 10px; /* Ajout d'une marge en bas pour l'espacement */
+    margin-bottom: 10px;
 }
 
-/* Entrée du code postal */
 #postal_code {
-    width: 150px;
+    width: fit-content;
     box-sizing: border-box;
     padding: 6px;
-    font-size: 15px;
+    font-size: 1em;
     text-align: center;
     margin-top: -10px;
-    color:rgb(9, 135, 214);
-    
+    background-color: #03618d;
+    color: #ffffff;
+    border: solid white 4px;
+    border-radius: 20px;
 }
 
-/* Ajoutez ces styles pour les options */
-.city_select option {
-    color:rgb(9, 135, 214);
+#postal_code::placeholder {
+    color: #dfdfdf;
 }
 
-.city_select {
-    width: 220px;
+#drop_down_list {
+    margin-bottom: 10px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#city_select {
+    width: fit-content;
     box-sizing: border-box;
     padding: 6px;
-    font-size: 15px;
+    font-size: 1em;
     margin-top: -10px;
     color:rgb(9, 135, 214);
+    background-color: #03618d;
+    color: white;
+    border: solid white 4px;
+    border-radius: 20px;
+    cursor : pointer;
 }
 
 #searchBtn {
     background-color: grey;
     color: #fff;
     padding: 12px 20px;
-    font-size: 16px;
     border: none;
+    font-size: 1em;
     border-radius: 5px;
     display: block;
-    margin-top: 14px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
     cursor: not-allowed;
     transition: all 0.4s;
+    border: solid white 4px;
+    border-radius: 20px;
 }
 
-#dropDownCardChild {
-    margin: 0 auto;
-    margin-top: 3%;
-    padding: 5px 30px;
-    width: 290px;
-    height: 370px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 1px 2px 10px rgba(0, 0, 0, .2);
-}
-
-span {
-    margin-left: 10px;
-    color: #999;
-    font-weight: 300;
-    font-size: 0.9em;
-}
-
-h3 {
-    float: left;
-    color: #777;
-    font-weight: 400;
-    font-size: 1em;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 0;
-    width: 100%;
-}
-
-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: block;
-    margin-top: 10px;
-}
-
-.errorWarning {
+#errorWarning {
     color: red;
     margin-left: auto;
     margin-right: auto;
@@ -143,7 +138,6 @@ img {
     opacity: 0;
     
 }
-
 
 @keyframes moveAndGrow {
     0% {
@@ -167,10 +161,256 @@ img {
     animation: moveAndGrow 2s ease-in-out infinite;
 }
 
+#dropDownCardChild {
+    background-color: rgba(0, 30, 39, 0.3);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    padding-bottom: 15px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+#day {
+    font-size: 1.5em;
+    color:#ffffff;
+}
+
+#city_selected {
+    color:#ffffff;
+    font-size: 1.4em;
+    margin-top: -5px;
+}
+
+#actual_weather {
+    color:#ffffff;
+    font-size: 1.2em;
+}
+
+#temperature {
+    font-size: 1.1em;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#temperature_min {
+    color: #24e5ff;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#temperature_max {
+    color: #ff5024;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#sun_and_rain {
+    width: 100%;
+    display: flex;
+}
+
+#sun_time {
+    color: #ffe75f;
+    width: 45%;
+    margin-left: 5%;
+}
+
+#sun_time_value {
+    color: #ffe75f;
+    font-size: 1.3em;
+}
+
+#raining_pourcentage {
+    color: #c7d8fa;
+    width: 45%;
+    margin-right: 5%;
+}
+
+#raining_pourcentage_value {
+    color: #c7d8fa;
+    font-size: 1.3em;
+}
+
 i {
+    margin-right: 1%;
+}
+
+span {
+    margin-left: 10px;
     color: #999;
-    font-size: 3em;
-    margin-right: 10px;
-    margin-top: 10px;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+h3 {
+    font-size: 1em;
     float: left;
+    color: #777;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+}
+
+#actualisation {
+    color:black;
+    font-size: 0.9em;
+    text-align: right;
+    padding-right: 5%;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}
+
+@media (min-width: 2001px) {
+    body {
+        font-size: 1.7em;
+    }
+
+    #title {
+        font-size: 5em;
+    }
+
+    /* Cadre de recherche */
+    #search_framework {
+        width: 65%;
+    }
+    
+    h2 {
+        font-size: 2.5em;
+    }
+
+    #dropDownCardChild {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1440px) and (max-width: 2000px) {
+    #title {
+        font-size: 4em;
+    }
+
+    /* Cadre de recherche */
+    #search_framework {
+        width: 65%;
+    }
+    
+    h2 {
+        font-size: 2.1em;
+    }
+
+    #dropDownCardChild {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    #title {
+        font-size: 3.5em;
+    }
+
+    /* Cadre de recherche */
+    #search_framework {
+        width: 70%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    #dropDownCardChild {
+        width: 40%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    #title {
+        font-size: 3.3em;
+    }
+
+    /* Cadre de recherche */
+    #search_framework {
+        width: 80%;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+    }
+
+    #dropDownCardChild {
+        width: 50%;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    #title {
+        font-size: 2.8em;
+    }
+
+    /* Cadre de recherche */
+    #search_framework {
+        width: 85%;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+
+    #dropDownCardChild {
+        width: 85%;
+    }
+
+    #actualisation {
+        text-align: center;
+        padding-right: 0%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+    #title {
+        font-size: 2.4em;
+    }
+
+    /* Cadre de recherche */
+    #search_framework {
+        width: 90%;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+    }
+
+    #dropDownCardChild {
+        width: 90%;
+    }
+
+    #actualisation {
+        text-align: center;
+        padding-right: 0%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+    #title {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.08em;
+    }
+
+    #actualisation {
+        text-align: center;
+        padding-right: 0%;
+    }
+}
+
+#weather {
+    font-size: 3em
 }
