@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     color:#ffffff;
+    text-align: center;
     font-size: 1em;
     margin: 2px;
     padding: 2px;
@@ -9,6 +10,16 @@ body {
     background-position: center center;
     background-attachment: fixed;
     
+}
+
+.bold {
+    font-weight: bold;
+    color:black;
+}
+
+.underline {
+    text-decoration: underline;
+    color:black;
 }
 
 #title {
@@ -145,15 +156,43 @@ h2 {
     animation: moveAndGrow 2s ease-in-out infinite;
 }
 
+#actualisation {
+    color:black;
+    font-size: 1.1em;
+}
+
 #dropDownCardChild {
     background-color: rgba(0, 30, 39, 0.3);
     margin-right: auto;
     margin-left: auto;
-    margin-top: 2%;
     padding: 10px;
     padding-bottom: 15px;
     border: 2px solid #ffffff;
     border-radius: 10px;
+}
+
+#day {
+    font-size: 1.4em;
+    color:#00303c;
+    text-shadow: #ffffff 1px 1px;
+}
+
+#temperature {
+    font-size: 1em;
+    color: rgb(207, 207, 207);
+    font-weight: bold;
+}
+
+#temperature_min {
+    color: rgb(36, 229, 255);
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#temperature_max {
+    color: rgb(255, 80, 36);
+    font-size: 1em;
+    font-weight: bold;
 }
 
 span {
