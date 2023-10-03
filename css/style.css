@@ -402,7 +402,7 @@ img {
         width: 85%;
     }
 
-    #actualisation {
+    .actualisation {
         text-align: center;
         padding-right: 0%;
     }
@@ -443,7 +443,7 @@ img {
         width: 90%;
     }
 
-    #actualisation {
+    .actualisation {
         text-align: center;
         padding-right: 0%;
     }
@@ -474,7 +474,7 @@ img {
         font-size: 1.08em;
     }
 
-    #actualisation {
+    .actualisation {
         text-align: center;
         padding-right: 0%;
     }
