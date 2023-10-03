@@ -35,14 +35,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
             div.innerHTML = `
                 <div id="dropDownCardChild">
-                    <h2 id="day" class="underline">${formattedDate}</h2>
-                    <p id="city_selected" class="bold underline">${data.city.name}</span></p>
-                    <p id="temperature">Temp° minimale : <span id="temperature_min">${data.forecast[0].tmin}°C</span></p>
-                    <p id="temperature">Temp° maximale : <span id="temperature_max"> ${data.forecast[0].tmax}°C</span></p>
-                    <p>${weatherTab[data.forecast[0].weather]}
-                        <span>Ensoleillement ${data.forecast[0].sun_hours}H</span>
-                        <span>Pluie ${data.forecast[0].probarain}%</span>
+                    <h2 id="day">${formattedDate}</h2>
+                    <p id="city_selected" class="bold">${data.city.name}</p>
+                    <p id="actual_weather">${weatherTab[data.forecast[0].weather]}</p>
+
+                    <p id="temperature">
+                        <i class="fa-solid fa-temperature-high fa-xl" style="color: #24e5ff;"></i>
+                        <span id="temperature_min">${data.forecast[0].tmin}°C</span>
                     </p>
+
+                    <p id="temperature">
+                        <i class="fa-solid fa-temperature-low fa-xl" style="color: #ff5024;"></i>
+                        <span id="temperature_max"> ${data.forecast[0].tmax}°C</span>
+                    <p>
+
+                    <div id="sun_and_rain">
+
+                        <div id="sun_time">
+                            <p>
+                                <i class="fa-solid fa-sun fa-spin fa-xl" style="color: #ffe75f;"></i>
+                                 Durée d'ensoleillement :<span id="sun_time_value" class="bold underline">${data.forecast[0].sun_hours}H</span>
+                            </p>
+                        </div>
+
+                        <div id="raining_pourcentage">
+                            <p>
+                                <i class="fa-solid fa-droplet fa-beat-fade fa-xl" style="color: #c7d8fa;"></i>
+                                   Pluie :<span id="raining_pourcentage_value" class="bold underline">${data.forecast[0].probarain}%</span>
+                            </p>
+                        </div>
+                    
+                    </div>
+
                 </div>
 
                 <p id="actualisation">Dernière actualisation à :<span class="bold underline">${formattedTime}</span></p>

@@ -160,11 +160,6 @@ h2 {
     animation: moveAndGrow 2s ease-in-out infinite;
 }
 
-#city_selected {
-    font-size: 1.3em;
-    margin-top: -5px;
-}
-
 #dropDownCardChild {
     background-color: rgba(0, 30, 39, 0.3);
     margin-right: auto;
@@ -176,26 +171,68 @@ h2 {
 }
 
 #day {
+    font-size: 1.5em;
+    color:#ffffff;
+}
+
+#city_selected {
+    color:#ffffff;
     font-size: 1.4em;
-    color:#ececec;
+    margin-top: -5px;
+}
+
+#actual_weather {
+    color:#ffffff;
+    font-size: 1.2em;
 }
 
 #temperature {
-    font-size: 1em;
-    color: rgb(207, 207, 207);
+    font-size: 1.1em;
+    color: #ffffff;
     font-weight: bold;
 }
 
 #temperature_min {
-    color: rgb(36, 229, 255);
-    font-size: 1em;
+    color: #24e5ff;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
 #temperature_max {
-    color: rgb(255, 80, 36);
+    color: #ff5024;
     font-size: 1em;
     font-weight: bold;
+}
+
+#sun_and_rain {
+    width: 100%;
+    display: flex;
+}
+
+#sun_time {
+    color: #ffe75f;
+    width: 45%;
+    margin-left: 5%;
+}
+
+#sun_time_value {
+    color: #ffe75f;
+    font-size: 1.3em;
+}
+
+#raining_pourcentage {
+    color: #c7d8fa;
+    width: 45%;
+    margin-right: 5%;
+}
+
+#raining_pourcentage_value {
+    color: #c7d8fa;
+    font-size: 1.3em;
+}
+
+i {
+    margin-right: 1%;
 }
 
 span {
