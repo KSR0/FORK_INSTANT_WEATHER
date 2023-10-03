@@ -14,12 +14,6 @@ body {
 
 .bold {
     font-weight: bold;
-    color:black;
-}
-
-.underline {
-    text-decoration: underline;
-    color:black;
 }
 
 #title {
@@ -195,14 +189,16 @@ h2 {
 
 #temperature_min {
     color: #24e5ff;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: bold;
+    margin-left: -5px;
 }
 
 #temperature_max {
     color: #ff5024;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: bold;
+    margin-left: -5px;
 }
 
 #sun_and_rain {
@@ -233,7 +229,7 @@ h2 {
 }
 
 i {
-    margin-right: 1%;
+    margin-right: 5px;
 }
 
 span {
