@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     img.src = "../img/meteo.png";
     let cityInsee;
 
-    const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux"];
     const daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
