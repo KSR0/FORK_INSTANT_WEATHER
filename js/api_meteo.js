@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 </div>
 
-                <p id="actualisation">Dernière actualisation à :<span class="bold underline">${formattedTime}</span></p>
+                <p class="actualisation">Dernière actualisation à :<span class="actualisation bold">${formattedTime}</span></p>
             `;
         })
         .catch(error => {
