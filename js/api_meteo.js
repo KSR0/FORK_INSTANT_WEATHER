@@ -43,21 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div id="dropDownCardChild">
                     <h2 id="day">${formattedDate}</h2>
                     <p id="city_selected" class="bold">${data.city.name}</p>
-                    <p id="actual_weather">${weatherMap[data.forecast[0].weather]}</p>
                     
                     <div>
-                            <i id="weather" class = "wi"></i>
+                        <i id="icon_weather" class = "wi"></i>
                     </div>
 
-                    <p class="temperature">
-                        <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
-                        <span id="temperature_min">${data.forecast[0].tmin}°C</span>
-                    </p>
+                    <p id="actual_weather">${weatherMap[data.forecast[0].weather]}</p>
 
-                    <p class="temperature">
-                        <i class="fa-solid fa-temperature-high fa-xl" style="color: #ff5024;"></i>
-                        <span id="temperature_max"> ${data.forecast[0].tmax}°C</span>
-                    <p>
+                    <div class="temperature">
+
+                        <div id="temp_min">
+                            <p >
+                                <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
+                                <span id="temperature_min">${data.forecast[0].tmin}°C</span>
+                            </p>
+                        </div>
+
+                        <div id="temp_max">
+                            <p >
+                                <i class="fa-solid fa-temperature-high fa-xl" style="color: #fd6464;"></i>
+                                <span id="temperature_max"> ${data.forecast[0].tmax}°C</span>
+                            <p>
+                        </div>
+
+                    </div>
 
                     <div id="sun_and_rain">
 
