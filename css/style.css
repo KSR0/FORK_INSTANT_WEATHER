@@ -82,6 +82,17 @@ h2 {
     color: #dfdfdf;
 }
 
+#postal_code[type="number"]::-webkit-inner-spin-button {
+    display: none;
+ }
+
+ /* Fallback for other browsers */
+ #postal_code[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+ }
+
 #drop_down_list {
     margin-bottom: 10px;
     display: flex;
