@@ -39,12 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p id="city_selected" class="bold">${data.city.name}</p>
                     <p id="actual_weather">${weatherTab[data.forecast[0].weather]}</p>
 
-                    <p id="temperature">
+                    <p class="temperature">
                         <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
                         <span id="temperature_min">${data.forecast[0].tmin}°C</span>
                     </p>
 
-                    <p id="temperature">
+                    <p class="temperature">
                         <i class="fa-solid fa-temperature-high fa-xl" style="color: #ff5024;"></i>
                         <span id="temperature_max"> ${data.forecast[0].tmax}°C</span>
                     <p>

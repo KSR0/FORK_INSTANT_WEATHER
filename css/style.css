@@ -191,7 +191,7 @@ h2 {
     font-size: 1.2em;
 }
 
-#temperature {
+.temperature {
     font-size: 1.1em;
     color: #ffffff;
     font-weight: bold;
@@ -220,6 +220,7 @@ h2 {
     color: #ffe75f;
     width: 45%;
     margin-left: 5%;
+    font-size: 1em;
 }
 
 #sun_time_value {
@@ -231,6 +232,7 @@ h2 {
     color: #c7d8fa;
     width: 45%;
     margin-right: 5%;
+    font-size: 1em;
 }
 
 #raining_pourcentage_value {
@@ -376,6 +378,23 @@ img {
         text-align: center;
         padding-right: 0%;
     }
+
+    #sun_time {
+        font-size: 0.9em;
+    }
+    
+    #sun_time_value {
+        font-size: 1.1em;
+    }
+    
+    #raining_pourcentage {
+        font-size: 0.9em;
+    }
+    
+    #raining_pourcentage_value {
+        font-size: 1.1em;
+    }
+
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -400,6 +419,22 @@ img {
         text-align: center;
         padding-right: 0%;
     }
+
+    #sun_time {
+        font-size: 0.85em;
+    }
+    
+    #sun_time_value {
+        font-size: 1.1em;
+    }
+    
+    #raining_pourcentage {
+        font-size: 0.85em;
+    }
+    
+    #raining_pourcentage_value {
+        font-size: 1.1em;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
@@ -414,5 +449,21 @@ img {
     #actualisation {
         text-align: center;
         padding-right: 0%;
+    }
+
+    #sun_time {
+        font-size: 0.8em;
+    }
+    
+    #sun_time_value {
+        font-size: 1.1em;
+    }
+    
+    #raining_pourcentage {
+        font-size: 0.8em;
+    }
+    
+    #raining_pourcentage_value {
+        font-size: 1.1em;
     }
 }
