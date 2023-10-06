@@ -247,25 +247,60 @@ h2 {
     display: flex;
 }
 
+@keyframes rotateSun {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#sun_img {
+    animation: rotateSun 8s linear infinite;
+}
+
 #sun_time {
     color: #ffe75f;
-    font-size: 1em;
+    font-size: 1.05em;
 }
 
 #sun_time_value {
     color: #ffe75f;
-    font-size: 1.3em;
+    font-size: 1.1em;
+}
+
+@keyframes fadeAndGrowDroplet {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+}
+
+#droplet_img {
+    animation: fadeAndGrowDroplet 4s ease-in infinite;
 }
 
 #raining_pourcentage {
     margin-right: 10%;
     color: #c7d8fa;
-    font-size: 1em;
+    font-size: 1.05em;
 }
 
 #raining_pourcentage_value {
     color: #c7d8fa;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 i {
