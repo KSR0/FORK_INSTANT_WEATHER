@@ -1,3 +1,17 @@
+@keyframes animateBG {
+    0% {
+        background-position: 0% 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0% 0;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     color:#ffffff;
@@ -6,9 +20,7 @@ body {
     margin: 2px;
     padding: 2px;
     background-image: url('../img/bg_sky3.png');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    animation: animateBG 25s ease-in-out infinite;
 }
 
 .bold {
