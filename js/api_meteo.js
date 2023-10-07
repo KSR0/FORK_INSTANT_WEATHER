@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     img.src = "../img/meteo.png";
     let cityInsee;
 
-    const weatherTab = ["Soleil","Peu nuageux","Ciel voilé","Nuageux"];
     const daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
@@ -24,8 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         .then(data => {
 
-            console.log(data.forecast[0].weather)
-
             const now = new Date();
             const hours = now.getHours();
             const minutes = now.getMinutes();
@@ -39,30 +36,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const formattedDate = `${dayOfWeek} ${dayOfMonth.toString().padStart(2, '0')} ${month} ${year}`;
 
-            div.innerHTML = `
-                <div id="dropDownCardChild">
-                    <h2 id="day">${formattedDate}</h2>
+            
+            let date;
+
+            for(let i = 0 ; i < 7 ; i++) {
+                let cpt = i + 1;
+                date = new Date(data.forecast[i].datetime);
+                dropDownCard.innerHTML += `<div id="dropDownCardChild">
+                    <h2>${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
                     <p id="city_selected" class="bold">${data.city.name}</p>
                     
                     <div>
-                        <i id="icon_weather" class = "wi"></i>
+                        <i id="weather${cpt}" class = "wi"></i>
                     </div>
-
-                    <p id="actual_weather">${weatherMap[data.forecast[0].weather]}</p>
-
+                    
+                    <p id="actual_weather">${weatherMap[data.forecast[i].weather]}</p>
+                    
                     <div class="temperature">
 
                         <div id="temp_min">
                             <p title="Température minimale">
                                 <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
-                                <span id="temperature_min">${data.forecast[0].tmin}°C</span>
+                                <span id="temperature_min">${data.forecast[i].tmin}°C</span>
                             </p>
                         </div>
 
                         <div id="temp_max">
                             <p title="Température maximale">
                                 <i class="fa-solid fa-temperature-high fa-xl" style="color: #fd6464;"></i>
-                                <span id="temperature_max"> ${data.forecast[0].tmax}°C</span>
+                                <span id="temperature_max"> ${data.forecast[i].tmax}°C</span>
                             <p>
                         </div>
 
@@ -73,25 +75,25 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div id="sun_time">
                             <p>
                                 <i id="sun_img" class="fa-solid fa-sun fa-xl" style="color: #ffe75f;"></i>
-                                Temps d'ensoleillement :<span id="sun_time_value" class="bold">${data.forecast[0].sun_hours}h</span>
+                                Temps d'ensoleillement :<span id="sun_time_value" class="bold">${data.forecast[i].sun_hours}h</span>
                             </p>
                         </div>
 
                         <div id="raining_pourcentage">
                             <p>
                                 <i id="droplet_img" class="fa-solid fa-droplet fa-xl" style="color: #c7d8fa;"></i>
-                                % de précipitation :<span id="raining_pourcentage_value" class="bold">${data.forecast[0].probarain}%</span>
+                                % de précipitation :<span id="raining_pourcentage_value" class="bold">${data.forecast[i].probarain}%</span>
                             </p>
                         </div>
                     
                     </div>
 
                 </div>
+                <br>`;
 
-                <p class="actualisation">Dernière actualisation à :<span class="actualisation bold">${formattedTime}</span></p>
-            `;
-
-            document.querySelector(".wi").classList.add(iconsMap[data.forecast[0].weather])
+                document.querySelector(`#weather${cpt}`).classList.add(iconsMap[data.forecast[i].weather])
+            }
+            
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation', error);
