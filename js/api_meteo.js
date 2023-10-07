@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let cpt = i + 1;
                 date = new Date(data.forecast[i].datetime);
                 dropDownCard.innerHTML += `<div id="dropDownCardChild">
-                    <h2>${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
+                    <h2 id="day">${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
                     <p id="city_selected" class="bold">${data.city.name}</p>
                     
                     <div>
