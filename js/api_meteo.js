@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p id="city_selected" class="bold">${data.city.name}</p>
                     
                     <div>
-                        <i id="weather${cpt}" class = "wi"></i>
+                        <i id="weather${cpt}" class = "wi icon_weather"></i>
                     </div>
                     
                     <p id="actual_weather">${weatherMap[data.forecast[i].weather]}</p>
