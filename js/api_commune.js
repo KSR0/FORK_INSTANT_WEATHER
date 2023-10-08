@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         makeSearchBtnOn();
                     } else {
                         makeSearchBtnOff();
+                        makeModalBtnOffAndClearCards();
                     }
                 };
                 citySelect.addEventListener("change", handleInputChange);
