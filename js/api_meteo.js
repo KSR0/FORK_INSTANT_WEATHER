@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         date = new Date(data.forecast[i].datetime);
                         dropDownCard.innerHTML += `<div id="dropDownCardChild">
                         <h2 id="day">${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
-                        <p id="city_selected" class="bold">${data.city.name}</p>
+                        <h3 id="city_selected" class="bold">${data.city.name}</h3>
                         
                         <div>
                             <i id="weather${cpt}" class = "wi icon_weather"></i>
