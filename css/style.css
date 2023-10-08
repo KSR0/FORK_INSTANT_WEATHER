@@ -20,6 +20,7 @@ body {
     margin: 2px;
     padding: 2px;
     background-image: url('../img/bg_sky3.png');
+    background-color: black;
     animation: animateBG 25s ease-in-out infinite;
 }
 
