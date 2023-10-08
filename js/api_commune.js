@@ -49,18 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#dropDownCard").innerHTML = "";
     }
     ///////
-
-
-    ///////
     const modalWindowBtn = document.querySelector("#modalWindowBtn");
-    function makeSearchBtnEnable() {
-        
-        if (document.querySelector("#city_select").value != 0) {
-            makeSearchBtnOn();
-        } else {
-            makeSearchBtnOff();
-        }
-    }
     ///////
 
 
@@ -77,11 +66,33 @@ document.addEventListener("DOMContentLoaded", function () {
     function createDropDownList() {
         document.querySelector("#drop_down_list").innerHTML = 
             `<label for="city_select" id="label_style">Choisissez une ville :</label>
-            <select name="cities" id="city_select">
-            </select>`;
+            <select name="cities" id="city_select"></select>`;
     }
     ///////
 
+    ///////
+    function eraseDropDownListDay() {
+        document.querySelector("#select_a_day_nb").innerHTML = ``;
+    }
+    function fillDropDownListDay() {
+        document.querySelector("#day_number_select").innerHTML += 
+            `
+            <option value="0">-- Selectionnez un nombre de jours --</option>
+            <option value="1">Aujourd'hui</option>
+            <option value="2">Aujourd'hui et demain</option>
+            <option value="3">Les 3 prochains jours</option>
+            <option value="4">Les 4 prochains jours</option>
+            <option value="5">Les 5 prochains jours</option>
+            <option value="6">Les 6 prochains jours</option>
+            <option value="7">Les 7 prochains jours</option>
+            `;
+    }
+    function createDropDownListDay() {
+        document.querySelector("#select_a_day_nb").innerHTML = 
+            `<label id="label_style">Afficher la météo pour :</label>
+            <select name="dayNumber" id="day_number_select"></select>`;
+    }
+    ///////
 
     ///////
     function displayError() {
@@ -124,13 +135,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data != "") {
                     //console.log(data);
                     createDropDownList();
-                    document.querySelector("#city_select").innerHTML = `<option value="0">-- Selectionnez une ville --</option>`;
-                    for (let ville of data) {
-                        fillDropDownList(ville);
+                    createDropDownListDay();
+                    const citySelect = document.querySelector("#city_select");
+                const dayNumberSelect = document.querySelector("#day_number_select");
+                citySelect.innerHTML = `<option value="0">-- Selectionnez une ville --</option>`;
+                for (let ville of data) {
+                    fillDropDownList(ville);
+                }
+                fillDropDownListDay();
+                const handleInputChange = () => {
+                    const cityValue = citySelect.value;
+                    const dayNumberValue = dayNumberSelect.value;
+                    if (cityValue != 0 && dayNumberValue != 0) {
+                        makeSearchBtnOn();
+                    } else {
+                        makeSearchBtnOff();
                     }
-                    document.querySelector("#city_select").addEventListener("change", () => {
-                        makeSearchBtnEnable();
-                    });
+                };
+                citySelect.addEventListener("change", handleInputChange);
+                dayNumberSelect.addEventListener("change", handleInputChange);
                     hideError();
                 } else {
                     warnUserPostalCodeNotExisting();
@@ -143,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
             hideError();
         } else {
             eraseDropDownList();
+            eraseDropDownListDay();
             warnUserPostalCodeNotValid();
             makeModalBtnOffAndClearCards();
         }

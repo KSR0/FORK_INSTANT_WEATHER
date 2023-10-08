@@ -104,6 +104,15 @@ h2 {
 }
 
 #drop_down_list {
+    margin-bottom: 17px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#select_a_day_nb {
     margin-bottom: 10px;
     display: flex;
     box-sizing: border-box;
@@ -127,6 +136,20 @@ h2 {
     cursor : pointer;
 }
 
+#day_number_select {
+    width: fit-content;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 6px;
+    font-size: 1em;
+    margin-top: -10px;
+    color:rgb(9, 135, 214);
+    background-color: #03618d;
+    color: white;
+    border: solid white 4px;
+    border-radius: 20px;
+    cursor : pointer;
+}
 
 #searchBtn {
     background-color: grey;
