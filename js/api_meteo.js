@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             div.innerHTML = `
                 <div id="dropDownCardChild">
                     <h2 id="day">${formattedDate}</h2>
-                    <p id="city_selected" class="bold">${data.city.name}</p>
+                    <h3 id="city_selected" class="bold">${data.city.name}</h3>
                     
                     <div>
                         <i id="icon_weather" class = "wi"></i>
