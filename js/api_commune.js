@@ -33,10 +33,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     ///////
+
     
+    ///////
+    function makeModalBtnOffAndClearCards() {
+        // Desactiver tous les filtres pour eviter un "bug graphique"
+        document.querySelector("#latitude_checkbox").checked = false;
+        document.querySelector("#longitude_checkbox").checked = false;
+        document.querySelector("#rain_quantity_checkbox").checked = false;
+        document.querySelector("#wind_speed_checkbox").checked = false;
+        document.querySelector("#wind_angle_checkbox").checked = false;
+
+        modalWindowBtn.style.display = "none";
+        modalWindowBtn.style.cursor = "not-allowed";
+        document.querySelector("#dropDownCard").innerHTML = "";
+    }
+    ///////
+
 
     ///////
+    const modalWindowBtn = document.querySelector("#modalWindowBtn");
     function makeSearchBtnEnable() {
+        
         if (document.querySelector("#city_select").value != 0) {
             makeSearchBtnOn();
         } else {
@@ -116,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     hideError();
                 } else {
                     warnUserPostalCodeNotExisting();
+                    makeModalBtnOffAndClearCards();
                 }
             })
             .catch(error => {
@@ -125,6 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             eraseDropDownList();
             warnUserPostalCodeNotValid();
+            makeModalBtnOffAndClearCards();
         }
+       
     })
 });

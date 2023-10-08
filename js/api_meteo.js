@@ -1,7 +1,16 @@
 import weatherMap from "./weatherMap.js"
 import iconsMap from "./iconsMap.js"
+
   
 document.addEventListener("DOMContentLoaded", () => {
+
+    ///////
+    function makeModalBtnOn() {
+        modalWindowBtn.style.display = "contents";
+        modalWindowBtn.style.cursor = "pointer";
+    }
+    ///////
+
     let img = new Image();
     img.src = "../img/meteo.png";
     let cityInsee;
@@ -88,15 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     </div>
 
+                    <div class="customized_weather_informations">
+                        
+                    </div>
                 </div>
                 <br>`;
 
                 document.querySelector(`#weather${cpt}`).classList.add(iconsMap[data.forecast[i].weather])
             }
-            
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation', error);
         });
+        makeModalBtnOn();
     });
 });
