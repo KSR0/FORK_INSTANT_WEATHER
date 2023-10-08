@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function fillDropDownListDay() {
         document.querySelector("#day_number_select").innerHTML += 
             `
-            <option value="0">-- Selectionnez un nombre de jours --</option>
+            <option value="0">-- Selectionnez une valeur --</option>
             <option value="1">Aujourd'hui</option>
             <option value="2">Aujourd'hui et demain</option>
             <option value="3">Les 3 prochains jours</option>

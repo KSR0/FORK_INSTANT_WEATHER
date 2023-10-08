@@ -48,74 +48,72 @@ document.addEventListener("DOMContentLoaded", () => {
             
             let date;
 
-            document.querySelector("#searchBtn").addEventListener("click", function () {
-                const selectedValue = parseInt(document.querySelector("#day_number_select").value);
-            
-                if (selectedValue >= 1 && selectedValue <= 7) {
-                    const limit = selectedValue;
-                    const dropDownCard = document.getElementById("dropDownCard");
-                    dropDownCard.innerHTML = "";
-                    for (let i = 0; i < limit; i++) {
-                        let cpt = i + 1;
-                        date = new Date(data.forecast[i].datetime);
-                        dropDownCard.innerHTML += `<div id="dropDownCardChild">
-                        <h2 id="day">${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
-                        <h3 id="city_selected" class="bold">${data.city.name}</h3>
-                        
-                        <div>
-                            <i id="weather${cpt}" class = "wi icon_weather"></i>
-                        </div>
-                        
-                        <p id="actual_weather">${weatherMap[data.forecast[i].weather]}</p>
-                        
-                        <div class="temperature">
-
-                            <div id="temp_min">
-                                <p title="Température minimale">
-                                    <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
-                                    <span id="temperature_min">${data.forecast[i].tmin}°C</span>
-                                </p>
-                            </div>
-
-                            <div id="temp_max">
-                                <p title="Température maximale">
-                                    <i class="fa-solid fa-temperature-high fa-xl" style="color: #fd6464;"></i>
-                                    <span id="temperature_max"> ${data.forecast[i].tmax}°C</span>
-                                <p>
-                            </div>
-
-                        </div>
-
-                        <div id="sun_and_rain">
-
-                            <div id="sun_time">
-                                <p>
-                                    <i id="sun_img" class="fa-solid fa-sun fa-xl" style="color: #ffe75f;"></i>
-                                    Temps d'ensoleillement :<span id="sun_time_value" class="bold">${data.forecast[i].sun_hours}h</span>
-                                </p>
-                            </div>
-
-                            <div id="raining_pourcentage">
-                                <p>
-                                    <i id="droplet_img" class="fa-solid fa-droplet fa-xl" style="color: #c7d8fa;"></i>
-                                    % de précipitation :<span id="raining_pourcentage_value" class="bold">${data.forecast[i].probarain}%</span>
-                                </p>
-                            </div>
-                        
-                        </div>
-
-                        <div class="customized_weather_informations">
-                            
-                        </div>
+            const selectedValue = parseInt(document.querySelector("#day_number_select").value);
+        
+            if (selectedValue >= 1 && selectedValue <= 7) {
+                const limit = selectedValue;
+                const dropDownCard = document.getElementById("dropDownCard");
+                dropDownCard.innerHTML = "";
+                for (let i = 0; i < limit; i++) {
+                    let cpt = i + 1;
+                    date = new Date(data.forecast[i].datetime);
+                    dropDownCard.innerHTML += `<div id="dropDownCardChild">
+                    <h2 id="day">${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
+                    <h3 id="city_selected" class="bold">${data.city.name}</h3>
+                    
+                    <div>
+                        <i id="weather${cpt}" class = "wi icon_weather"></i>
                     </div>
-                    <br>`;
+                    
+                    <p id="actual_weather">${weatherMap[data.forecast[i].weather]}</p>
+                    
+                    <div class="temperature">
 
-                    document.querySelector(`#weather${cpt}`).classList.add(iconsMap[data.forecast[i].weather])
-                    }
-                } else {
-                    console.error("La valeur sélectionnée n'est pas valide.");
+                        <div id="temp_min">
+                            <p title="Température minimale">
+                                <i class="fa-solid fa-temperature-low fa-xl" style="color: #24e5ff;"></i>
+                                <span id="temperature_min">${data.forecast[i].tmin}°C</span>
+                            </p>
+                        </div>
+
+                        <div id="temp_max">
+                            <p title="Température maximale">
+                                <i class="fa-solid fa-temperature-high fa-xl" style="color: #fd6464;"></i>
+                                <span id="temperature_max"> ${data.forecast[i].tmax}°C</span>
+                            <p>
+                        </div>
+
+                    </div>
+
+                    <div id="sun_and_rain">
+
+                        <div id="sun_time">
+                            <p>
+                                <i id="sun_img" class="fa-solid fa-sun fa-xl" style="color: #ffe75f;"></i>
+                                Temps d'ensoleillement :<span id="sun_time_value" class="bold">${data.forecast[i].sun_hours}h</span>
+                            </p>
+                        </div>
+
+                        <div id="raining_pourcentage">
+                            <p>
+                                <i id="droplet_img" class="fa-solid fa-droplet fa-xl" style="color: #c7d8fa;"></i>
+                                % de précipitation :<span id="raining_pourcentage_value" class="bold">${data.forecast[i].probarain}%</span>
+                            </p>
+                        </div>
+                    
+                    </div>
+
+                    <div class="customized_weather_informations">
+                        
+                    </div>
+                </div>
+                <br>`;
+
+                document.querySelector(`#weather${cpt}`).classList.add(iconsMap[data.forecast[i].weather])
                 }
-            }); 
+            } else {
+                console.error("La valeur sélectionnée n'est pas valide.");
+            }
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation', error);
