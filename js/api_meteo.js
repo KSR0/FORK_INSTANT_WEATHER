@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     <p id="actual_weather">${weatherMap[data.forecast[i].weather]}</p>
                     
-                    <div class="temperature">
+                    <div id="temperature">
 
                         <div id="temp_min">
                             <p title="Température minimale">

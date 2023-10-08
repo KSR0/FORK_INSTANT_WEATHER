@@ -57,20 +57,63 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (i%2 == 0) {
                     for (let j = 0; j < dropDownCard.children[i].children.length; j++) {
                         if (dropDownCard.children[i].children[j].className == "customized_weather_informations") {
-                            if (latitudeState) {
-                                dropDownCard.children[i].children[j].innerHTML += `Latitude décimale de la commune : ${data.forecast[cmpt].latitude}</br>`;
+                            if (latitudeState && longitudeState) {
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="latitude_longitude">
+                                    <div id="latitude">
+                                        <p>Latitude décimale de la commune : <span id="latitude_value" class="bold">${data.forecast[cmpt].latitude}</span></p>
+                                    </div>
+
+                                    <div id="longitude">
+                                        <p>Longitude décimale de la commune : <span id="longitude_value" class="bold">${data.forecast[cmpt].longitude}</span></p>
+                                    </div>
+                                </div>`;
                             }
-                            if (longitudeState) {
-                                dropDownCard.children[i].children[j].innerHTML += `Longitude décimale de la commune : ${data.forecast[cmpt].longitude}</br>`;
+                            else if (latitudeState) {
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="latitude1">
+                                    <p>Latitude décimale de la commune : <span id="latitude_value" class="bold">${data.forecast[cmpt].latitude}</span></p>
+                                </div>`;
                             }
+                            else if (longitudeState) {
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="longitude1">
+                                    <p>Longitude décimale de la commune : <span id="longitude_value" class="bold">${data.forecast[cmpt].longitude}</span></p>
+                                </div>`;
+                            }
+
+
+                            if (windSpeedState && windAngleState) {
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="vent">
+                                    <div id="vent_moyen">
+                                        <p>Vent moyen à 10 mètres : <span id="vent_moyen_value" class="bold">${data.forecast[cmpt].wind10m}</span></p>
+                                    </div>
+
+                                    <div id="direction_vent">
+                                        <p>Direction du vent en degrés (0 à 360°) : <span id="direction_vent_value" class="bold">${data.forecast[cmpt].dirwind10m}</span></p>
+                                    </div>
+                                </div>`;
+                            }
+                            else if (windSpeedState) {
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="vent_moyen1">
+                                    <p>Vent moyen à 10 mètres : <span id="vent_moyen_value" class="bold">${data.forecast[cmpt].wind10m}</span></p>
+                                </div>`;
+                            }
+                            else if (windAngleState) {
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="direction_vent1">
+                                    <p>Direction du vent en degrés (0 à 360°) : <span id="direction_vent_value" class="bold">${data.forecast[cmpt].dirwind10m}</span></p>
+                                </div>`;
+                            }
+
+
                             if (rainState) {
-                                dropDownCard.children[i].children[j].innerHTML += `Cumul de pluie sur la journée : ${data.forecast[cmpt].rr1}mm</br>`;
-                            }
-                            if (windSpeedState) {
-                                dropDownCard.children[i].children[j].innerHTML += `Vent moyen à 10 mètres : ${data.forecast[cmpt].wind10m}km/h</br>`;
-                            }
-                            if (windAngleState) {
-                                dropDownCard.children[i].children[j].innerHTML += `Direction du vent en degrés (0 à 360°) : ${data.forecast[cmpt].dirwind10m}°</br>`;
+                                dropDownCard.children[i].children[j].innerHTML += `
+                                <div id="cumul_pluie">
+                                    <p>Cumul de pluie sur la journée : <span id="cumul_pluie_value" class="bold">${data.forecast[cmpt].rr1}mm</span></p>
+                                </div>`;
                             }
                             cmpt++;
                         }

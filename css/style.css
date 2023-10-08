@@ -284,8 +284,8 @@ h2 {
     font-size: 1.2em;
 }
 
-#temp_min, #temp_max, #sun_time, #raining_pourcentage {
-    padding: 1px;
+#temp_min, #temp_max, #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent {
+    padding: 1%;
     width: 40%;
 }
 
@@ -297,6 +297,23 @@ h2 {
     grid-row: 2;
 }
 
+#latitude, #longitude {
+    color:#331f1f;
+    font-size: 1.05em;
+    grid-row: 3;
+}
+
+#latitude1, #longitude1, #vent_moyen1, #direction_vent1, #cumul_pluie {
+    color:#331f1f;
+    font-size: 1.05em;
+}
+
+#vent_moyen, #direction_vent {
+    color:#331f1f;
+    font-size: 1.05em;
+    grid-row: 4;
+}
+
 #temp_min {
     margin-left: 10%;
 }
@@ -305,7 +322,7 @@ h2 {
     margin-right: 10%;
 }
 
-.temperature {
+#temperature {
     width: 100%;
     display: flex;
 }
@@ -325,6 +342,18 @@ h2 {
 }
 
 #sun_and_rain {
+    margin-left: 10%;
+    width: 100%;
+    display: flex;
+}
+
+#latitude_longitude {
+    margin-left: 10%;
+    width: 100%;
+    display: flex;
+}
+
+#vent {
     margin-left: 10%;
     width: 100%;
     display: flex;
@@ -351,6 +380,11 @@ h2 {
 
 #sun_time_value {
     color: #ffe75f;
+    font-size: 1.1em;
+}
+
+#latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
+    color:#331f1f;
     font-size: 1.1em;
 }
 
@@ -541,22 +575,13 @@ img {
         padding-right: 0%;
     }
 
-    #sun_time {
+    #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent, #cumul_pluie {
         font-size: 0.9em;
     }
     
-    #sun_time_value {
+    #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
         font-size: 1.1em;
     }
-    
-    #raining_pourcentage {
-        font-size: 0.9em;
-    }
-    
-    #raining_pourcentage_value {
-        font-size: 1.1em;
-    }
-
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -585,19 +610,11 @@ img {
         padding-right: 0%;
     }
 
-    #sun_time {
+    #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent, #cumul_pluie {
         font-size: 0.85em;
     }
     
-    #sun_time_value {
-        font-size: 1.1em;
-    }
-    
-    #raining_pourcentage {
-        font-size: 0.85em;
-    }
-    
-    #raining_pourcentage_value {
+    #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
         font-size: 1.1em;
     }
 }
@@ -620,19 +637,11 @@ img {
         padding-right: 0%;
     }
 
-    #sun_time {
+    #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent, #cumul_pluie {
         font-size: 0.8em;
     }
     
-    #sun_time_value {
-        font-size: 1.1em;
-    }
-    
-    #raining_pourcentage {
-        font-size: 0.8em;
-    }
-    
-    #raining_pourcentage_value {
+    #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
         font-size: 1.1em;
     }
 }
