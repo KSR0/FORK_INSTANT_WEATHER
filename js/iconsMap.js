@@ -1,4 +1,8 @@
+/* Ce module définit une carte de correspondance entre les codes de conditions météorologiques
+et les classes d'icônes de l'API Weather Icons (https://weathericons.io/).*/
+
 const iconsMap = {
+    // Codes météo et classes d'icônes
     0: "wi-day-sunny",
     1: "wi-day-cloudy",
     2: "wi-day-cloudy-high",

@@ -1,4 +1,8 @@
+/* Ce module définit une carte de correspondance entre les codes de conditions 
+météorologiques et les descriptions textuelles associées à chaque code.*/
+
 const weatherMap = {
+    // Codes météo et descriptions
     0: "Soleil",
     1: "Peu nuageux",
     2: "Ciel voilé",

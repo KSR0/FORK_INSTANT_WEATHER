@@ -1,30 +1,33 @@
-import weatherMap from "./weatherMap.js"
-import iconsMap from "./iconsMap.js"
-
+import weatherMap from "./weatherMap.js" // Importe le module weatherMap.js
+import iconsMap from "./iconsMap.js" // Importe le module iconsMap.js
   
 document.addEventListener("DOMContentLoaded", () => {
 
     const settingsElement = document.getElementById('settings');
     settingsElement.style.display = 'none';
-    ///////
+
+    // Fonction pour activer le bouton de paramètres
     function makeSettingsBtnOn() {
         settings_button.style.display = "contents";
         settings_button.style.cursor = "pointer";
     }
-    ///////
 
     let img = new Image();
-    img.src = "../img/meteo.png";
+    img.src = "img/meteo.png";
     let cityInsee;
 
+    // Tableaux pour les jours de la semaine et les mois
     const daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
+    // Événement de clic sur le bouton de recherche
     document.querySelector("#searchBtn").addEventListener("click", function() 
     {
+        // Récupère la valeur sélectionnée dans la liste déroulante de la ville
         cityInsee = document.querySelector("#city_select").value;
         let div = document.getElementById("dropDownCard");
 
+        // Appel à l'API météo avec la valeur de la ville
         fetch(`https://api.meteo-concept.com/api/forecast/daily?token=76b2e76768f5e4533afe38c9d014c4a11bb761d64cae45fa56f033aa8bc0910a&insee=${cityInsee}`)
         .then(response => {
             if (!response.ok) {
@@ -38,17 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const now = new Date();
             const hours = now.getHours();
             const minutes = now.getMinutes();
-            const seconds = now.getSeconds(); // Ajout des secondes
-            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`; // Ajout des secondes
+            const seconds = now.getSeconds();
+            const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-            const dayOfWeek = daysOfWeek[now.getDay()];
-            const dayOfMonth = now.getDate();
-            const month = months[now.getMonth()];
-            const year = now.getFullYear();
-
-            const formattedDate = `${dayOfWeek} ${dayOfMonth.toString().padStart(2, '0')} ${month} ${year}`;
-
-            
             let date;
 
             const selectedValue = parseInt(document.querySelector("#day_number_select").value);
@@ -57,10 +52,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 const limit = selectedValue;
                 const dropDownCard = document.getElementById("dropDownCard");
                 dropDownCard.innerHTML = "";
+
+                // Boucle pour générer les cartes en fonction du nombre de jours sélectionnés
                 for (let i = 0; i < limit; i++) {
                     let cpt = i + 1;
                     date = new Date(data.forecast[i].datetime);
+                    // Utilisation des données pour remplir les éléments HTML
+                    // Ajout de classes et d'icônes basées sur les données météo
                     dropDownCard.innerHTML += `<div id="dropDownCardChild">
+                    <div id="page_actualisation">
+                        <p class="actualisation">Dernière actualisation à :<span class="actualisation bold">${formattedTime}</span></p>
+                    </div>
+
                     <h2 id="day">${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
                     <h3 id="city_selected" class="bold">${data.city.name}</h3>
                     
@@ -121,6 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => {
             console.error('There was a problem with the fetch operation', error);
         });
+
+        // Appel de la fonction pour activer le bouton de paramètres
         makeSettingsBtnOn();
     });
 });

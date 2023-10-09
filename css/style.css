@@ -1,3 +1,4 @@
+/* Animation de l'arrière-plan */
 @keyframes animateBG {
     0% {
         background-position: 0% 0;
@@ -12,6 +13,7 @@
     }
 }
 
+/* Styles généraux du corps de la page */
 body {
     font-family: Arial, sans-serif;
     color:#ffffff;
@@ -25,10 +27,12 @@ body {
     animation: animateBG 25s ease-in-out infinite;
 }
 
+/* Style pour le texte en gras */
 .bold {
     font-weight: bold;
 }
 
+/* Style pour le titre principal */
 #title {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 3em;
@@ -38,6 +42,7 @@ body {
     text-shadow: #005064 1px 2px;
 }
 
+/* Styles pour la description et les titres de section */
 #web_site_description,
 h2 {
     margin-top: 10px;
@@ -70,6 +75,7 @@ h2 {
     flex-wrap: wrap;
 }
 
+/* Style du label */
 #label_style {
     font-size: 1em;
     flex-shrink: 0;
@@ -77,6 +83,7 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* Style pour les labels associés aux checkboxes */
 .label_input_style {
     font-size: 1em;
     flex-shrink: 0;
@@ -84,6 +91,7 @@ h2 {
     margin-bottom: 5px;
 }
 
+/* Style pour le champ postal */
 #postal_code {
     width: 13em;
     box-sizing: border-box;
@@ -101,15 +109,18 @@ h2 {
     color: #dfdfdf;
 }
 
+/* Style pour cacher les flèches de l'input de type number */
 #postal_code[type="number"]::-webkit-inner-spin-button {
     display: none;
- }
+}
 
+/* Style pour l'apparence du champ postal de type number */
 
 #postal_code[type="number"] {
     appearance: textfield;
 }
 
+/* Style pour la liste déroulante */
 #drop_down_list {
     margin-bottom: 17px;
     display: flex;
@@ -119,6 +130,7 @@ h2 {
     flex-wrap: wrap;
 }
 
+/* Style pour la sélection du jour */
 #select_a_day_nb {
     margin-bottom: 10px;
     display: flex;
@@ -158,8 +170,9 @@ h2 {
     cursor : pointer;
 }
 
+/* Style pour le bouton de recherche */
 #searchBtn {
-    background-color: grey;
+    background-color: #717070;
     color: #fff;
     padding: 12px 20px;
     border: none;
@@ -175,27 +188,32 @@ h2 {
 }
 
 #button_container {
-    display: flex;
-    align-items: center;
-    margin-left: 10px; /* Ajustez selon vos préférences */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Style pour le bouton des paramètres */
 #settings_button {
+    margin-left: auto;
+    margin-right: auto;
     border: none;
     background-color: #ffffff00;
     color: #ffffff;
-    margin-right: px;
     display: none;
 }
 
+/* Style pour les checkboxes et leur label */
 .checkbox-label {
     margin-bottom: 1px;
 }
 
+/* Style pour la section des paramètres */
 #settings {
     display: none;
 }
 
+/* Styles pour les checkboxes individuelles */
 #latitude_checkbox, #longitude_checkbox, #wind_speed_checkbox, #wind_angle_checkbox, #rain_quantity_checkbox {
     cursor : pointer;
 }
@@ -205,11 +223,7 @@ h2 {
     margin-right: 10px; /* Espace entre la checkbox et le texte */
 }
 
-#settings_title {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
+/* Style pour les messages d'erreur */
 #errorWarning {
     color: #ff0000;
     margin-left: auto;
@@ -220,6 +234,7 @@ h2 {
     
 }
 
+/* Animation du bouton de recherche lorsqu'on le survole */
 @keyframes moveAndGrow {
     0% {
         transform: translateY(0px);
@@ -237,11 +252,13 @@ h2 {
     }
 }
 
+/* Animation pour les messages d'erreur */
 #p_error {
     margin-top: 0;
     animation: moveAndGrow 2s ease-in-out infinite;
 }
 
+/* Style pour les cartes météo */
 #dropDownCardChild {
     background-color: rgba(0, 30, 39, 0.3);
     margin-right: auto;
@@ -255,7 +272,7 @@ h2 {
     gap: 10px;
 }
 
-#day, #settings_title {
+#day {
     font-size: 1.5em;
     color:#ffffff;
 }
@@ -304,18 +321,18 @@ h2 {
 }
 
 #latitude, #longitude {
-    color:#331f1f;
+    color:#c9c6c6;
     font-size: 1.05em;
     grid-row: 3;
 }
 
 #latitude1, #longitude1, #vent_moyen1, #direction_vent1, #cumul_pluie {
-    color:#331f1f;
+    color:#c9c6c6;
     font-size: 1.05em;
 }
 
 #vent_moyen, #direction_vent {
-    color:#331f1f;
+    color:#c9c6c6;
     font-size: 1.05em;
     grid-row: 4;
 }
@@ -382,7 +399,7 @@ em {
 }
 
 #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
-    color:#331f1f;
+    color:#dadada;
     font-size: 1.1em;
 }
 
@@ -441,8 +458,7 @@ h3 {
 .actualisation {
     color:#ffffff;
     font-size: 1em;
-    text-align: right;
-    padding-right: 5%;
+    text-align: center;
 }
 
 img {
@@ -454,6 +470,9 @@ img {
     margin-top: 10px;
 }
 
+/*--------------------------------------------------------*/
+
+/* Media queries pour les différentes tailles d'écrans */
 @media (min-width: 2001px) {
     body {
         font-size: 1.7em;
@@ -478,6 +497,8 @@ img {
     }
 }
 
+
+
 @media (min-width: 1440px) and (max-width: 2000px) {
     body {
         animation: animateBG 40s ease-in-out infinite;
@@ -500,6 +521,8 @@ img {
         width: 40%;
     }
 }
+
+
 
 @media (min-width: 1024px) and (max-width: 1439px) {
     body {
@@ -524,6 +547,8 @@ img {
     }
 }
 
+
+
 @media (min-width: 768px) and (max-width: 1023px) {
     body {
         animation: animateBG 90s ease-in-out infinite;
@@ -547,6 +572,8 @@ img {
     
 }
 
+
+
 @media (min-width: 425px) and (max-width: 767px) {
     body {
         animation: animateBG 100s ease-in-out infinite;
@@ -569,11 +596,6 @@ img {
         width: 85%;
     }
 
-    .actualisation {
-        text-align: center;
-        padding-right: 0%;
-    }
-
     #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent, #cumul_pluie {
         font-size: 0.9em;
     }
@@ -581,12 +603,6 @@ img {
     .label_input_style {
         float: left;
         font-size: 1em;
-    }
-
-    #settings_title {
-        font-size: 1.4em;
-        margin-top: 15px;
-        margin-bottom: 15px;
     }
 
     #settings {
@@ -598,6 +614,8 @@ img {
     }
 
 }
+
+
 
 @media (min-width: 375px) and (max-width: 424px) {
     body {
@@ -620,11 +638,6 @@ img {
         width: 90%;
     }
 
-    .actualisation {
-        text-align: center;
-        padding-right: 0%;
-    }
-
     #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent, #latitude1, #longitude1, #vent_moyen1, #direction_vent1, #cumul_pluie {
         font-size: 0.85em;
     }
@@ -632,12 +645,6 @@ img {
     .label_input_style {
         float: left;
         font-size: 0.9em;
-    }
-
-    #settings_title {
-        font-size: 1.3em;
-        margin-top: 15px;
-        margin-bottom: 15px;
     }
 
     #settings {
@@ -648,6 +655,8 @@ img {
         font-size: 1.1em;
     }
 }
+
+
 
 @media (min-width: 320px) and (max-width: 374px) {
     body {
@@ -662,11 +671,6 @@ img {
         font-size: 1.08em;
     }
 
-    .actualisation {
-        text-align: center;
-        padding-right: 0%;
-    }
-
     #sun_time, #raining_pourcentage, #latitude, #longitude, #vent_moyen, #direction_vent, #latitude1, #longitude1, #vent_moyen1, #direction_vent1, #cumul_pluie {
         font-size: 0.8em;
     }
@@ -674,12 +678,6 @@ img {
     .label_input_style {
         float: left;
         font-size: 0.8em;
-    }
-
-    #settings_title {
-        font-size: 1.2em;
-        margin-top: 15px;
-        margin-bottom: 15px;
     }
 
     #settings {

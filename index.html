@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/weather-icons.min.css">
-        <script type="module" src="js/api_meteo.js"></script>
-        <script src="js/api_commune.js" async></script>
-        <script src="js/settings.js" async></script>
+        <link rel="stylesheet" href="css/style.css"> <!-- Fichier CSS pour la mise en page -->
+        <link rel="stylesheet" href="css/weather-icons.min.css"> <!-- Fichier CSS pour les icônes météo -->
+        <script type="module" src="js/api_meteo.js"></script> <!-- Fichier JavaScript pour l'API météo -->
+        <script src="js/api_commune.js" async></script> <!-- Fichier JavaScript pour l'API des communes -->
+        <script src="js/settings.js" async></script> <!-- Fichier JavaScript pour les options supplémentaires -->
         <title>Instant Weather</title>
-        <link rel="icon" type="image/x-icon" href="/img/cloudy.ico">
-        <script src="https://kit.fontawesome.com/7509b7dacb.js" crossorigin="anonymous" defer></script> <!-- // Font Awesome-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/x-icon" href="/img/cloudy.ico"> <!-- Icône de la page -->
+        <script src="https://kit.fontawesome.com/7509b7dacb.js" crossorigin="anonymous" defer></script> <!-- Font Awesome -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Connexion préalable à Google Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Neuton&family=Open+Sans&display=swap" rel="stylesheet">
@@ -19,7 +20,11 @@
     </head>
 
     <body>
-        <header><h1 id="title">Instant Weather</h1></header>
+        <header><h1 id="title">Instant Weather</h1></header> <!-- En-tête de la page -->
+
+        <div id="page_actualisation">
+
+        </div>
 
         <div id="search_framework">
             <h2 id="web_site_description">La météo en direct de votre ville :</h2>
@@ -27,31 +32,30 @@
 
                 <div id="input-group">
                     <label for="postal_code" id="label_style">Entrez un code postal :</label>
-                    <input type="number" id="postal_code" min="01000" placeholder="Exemple : 14000">
+                    <input type="number" id="postal_code" min="01000" placeholder="Exemple : 14000"> <!-- Champ pour entrer le code postal -->
                 </div>
 
                 <div id="drop_down_list">
-                    
+                    <!-- Liste déroulante pour les options -->
                 </div>
 
                 <div id="select_a_day_nb">
-                    
+                    <!-- Sélection du jour -->
                 </div>
 
                 <div id="errorWarning">
-                    <p id="p_error"></p>
+                    <p id="p_error"></p> <!-- Message d'erreur -->
                 </div>
 
                 <div id="button_settings_display">
 
-                    <button type="button" id="searchBtn" disabled>Rechercher</button>
+                    <button type="button" id="searchBtn" disabled>Rechercher</button> <!-- Bouton de recherche -->
                     <div id="button_container">
-                        <button title="Plus d'options" type="button" id="settings_button"><em class="fa-solid fa-gear fa-2xl"></em> Options :</button>
+                        <button title="Plus d'options" type="button" id="settings_button"><em class="fa-solid fa-gear fa-2xl"></em> Options</button> <!-- Bouton pour les options -->
                     </div>
-                    
+
                     <div id="settings">
-                        <h3 id="settings_title" class="bold">Options supplémentaires :</h3>
-            
+                        <br>
                         <label for="latitude_checkbox" class="checkbox-label label_input_style"><input type="checkbox" id="latitude_checkbox">
                             Latitude décimale de la commune
                         </label>
@@ -80,8 +84,9 @@
         </div>
 
         <div id="dropDownCard">
-
+            <!-- Carte déroulante -->
         </div>
-        
+
     </body>
+
 </html>

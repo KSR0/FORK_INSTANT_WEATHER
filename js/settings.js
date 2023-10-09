@@ -1,18 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Récupération des éléments DOM
     const settings_button = document.querySelector("#settings_button");
     const dropDownCard = document.querySelector("#dropDownCard");
 
+    // Écouteur d'événement sur le bouton de paramètres
     settings_button.addEventListener("click", function () {
     });
 
+    // Déclaration des variables pour les états des options
     let latitudeState;
     let longitudeState;
     let rainState;
     let windSpeedState;
     let windAngleState;
     
-    // Permet de savoir ce que l'utilisateur veut voir
+    // Fonction pour vérifier les options sélectionnées par l'utilisateur
     function checkOptionsSelected() {
         latitudeState = document.querySelector("#latitude_checkbox").checked;
         longitudeState = document.querySelector("#longitude_checkbox").checked;
@@ -21,9 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
         windAngleState = document.querySelector("#wind_angle_checkbox").checked;
     }
 
-
+    // Déclaration des variables pour stocker l'INSEE de la ville et le compteur
     let cityInsee;
     let cmpt = 0;
+
+    // Fonction pour afficher les informations météo
     function displayWeatherInformations() {
         for (let i = 0; i < dropDownCard.children.length - 1; i++) {
             if (i%2 == 0) {
@@ -123,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Écouteur d'événement sur le bouton de paramètres
     document.getElementById('settings_button').addEventListener('click', function() {
         var settings_button = document.getElementById('settings');
         settings_button.style.display = (settings_button.style.display == 'block') ? 'none' : 'block';
@@ -130,26 +136,31 @@ document.addEventListener("DOMContentLoaded", function () {
         displayWeatherInformations();
     });
 
+    // Écouteurs d'événement sur les cases à cocher des options
     document.querySelector("#latitude_checkbox").addEventListener("change", function () {
         checkOptionsSelected();
         displayWeatherInformations();
     });
 
+    // Écouteurs d'événement sur les cases à cocher des options
     document.querySelector("#longitude_checkbox").addEventListener("change", function () {
         checkOptionsSelected();
         displayWeatherInformations();
     });
 
+    // Écouteurs d'événement sur les cases à cocher des options
     document.querySelector("#rain_quantity_checkbox").addEventListener("change", function () {
         checkOptionsSelected();
         displayWeatherInformations();
     });
 
+    // Écouteurs d'événement sur les cases à cocher des options
     document.querySelector("#wind_speed_checkbox").addEventListener("change", function () {
         checkOptionsSelected();
         displayWeatherInformations();
     });
 
+    // Écouteurs d'événement sur les cases à cocher des options
     document.querySelector("#wind_angle_checkbox").addEventListener("change", function () {
         checkOptionsSelected();
         displayWeatherInformations();
