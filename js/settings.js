@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         cityInsee = document.querySelector("#city_select").value;
         
-        fetch(`https://api.meteo-concept.com/api/forecast/daily?token=52ebc4fdc1af7f1041b873d5f7c3140eaa23454977b3519f5f1110a3a8176c48&insee=${cityInsee}`)
+        fetch(`https://api.meteo-concept.com/api/forecast/daily?token=76b2e76768f5e4533afe38c9d014c4a11bb761d64cae45fa56f033aa8bc0910a&insee=${cityInsee}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
