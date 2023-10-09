@@ -590,7 +590,7 @@ img {
     }
 
     #settings {
-        margin-bottom: 28%;
+        margin-bottom: 40%;
     }
     
     #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
@@ -641,7 +641,7 @@ img {
     }
 
     #settings {
-        margin-bottom: 30%;
+        margin-bottom: 50%;
     }
     
     #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
@@ -683,7 +683,7 @@ img {
     }
 
     #settings {
-        margin-bottom: 35%;
+        margin-bottom: 50%;
     }
     
     #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
