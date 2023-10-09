@@ -4,10 +4,12 @@ import iconsMap from "./iconsMap.js"
   
 document.addEventListener("DOMContentLoaded", () => {
 
+    const settingsElement = document.getElementById('settings');
+    settingsElement.style.display = 'none';
     ///////
-    function makeModalBtnOn() {
-        modalWindowBtn.style.display = "contents";
-        modalWindowBtn.style.cursor = "pointer";
+    function makeSettingsBtnOn() {
+        settings_button.style.display = "contents";
+        settings_button.style.cursor = "pointer";
     }
     ///////
 
@@ -18,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const daysOfWeek = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     const months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 
-    document.querySelector("#searchBtn").addEventListener("click", function() {
+    document.querySelector("#searchBtn").addEventListener("click", function() 
+    {
         cityInsee = document.querySelector("#city_select").value;
         let div = document.getElementById("dropDownCard");
 
@@ -118,6 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => {
             console.error('There was a problem with the fetch operation', error);
         });
-        makeModalBtnOn();
+        makeSettingsBtnOn();
     });
 });

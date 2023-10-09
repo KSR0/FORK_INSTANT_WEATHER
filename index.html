@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/weather-icons.min.css">
         <script type="module" src="js/api_meteo.js" defer></script>
         <script src="js/api_commune.js" defer></script>
-        <script src="js/modalWindow.js" defer></script>
+        <script src="js/settings.js" defer></script>
         <title>Instant Weather</title>
         <link rel="icon" type="image/x-icon" href="/img/cloudy.ico">
         <script src="https://kit.fontawesome.com/7509b7dacb.js" crossorigin="anonymous" defer></script> <!-- // Font Awesome-->
@@ -42,39 +42,35 @@
                     <p id="p_error"></p>
                 </div>
 
-                <div id="SearchAndModalWindowBtn">
-                    <button type="button" id="searchBtn" disabled>Rechercher</button>
-                    <button type="button" id="modalWindowBtn"> Filtres : <em class="fa-solid fa-gear fa-2xl"></em></button>
-                    <div id="modalWindow">
-                        <div id="modalWindowContent">
-                            <em id="close">&times;</em>
-                            <p id="modalTitle">Que voulez-vous afficher ?</p>
+                <div id="button_settings_display">
 
-                            <p>
-                                <label for="latitude" id="latitude">Latitude décimale de la commune</label>
-                                <input type="checkbox" id="latitude_checkbox">
-                            </p>
-    
-                            <p>
-                                <label for="longitude" id="longitude">Longitude décimale de la commune</label>
-                                <input type="checkbox" id="longitude_checkbox">
-                            </p>
-
-                            <p>
-                                <label for="wind_speed" id="vent_moyen">Vent moyen à 10 mètres en km/h</label>
-                                <input type="checkbox" id="wind_speed_checkbox">
-                            </p>
-
-                            <p>
-                                <label for="wind_angle" id="direction_vent">Direction du vent en degrés (0 à 360°)</label>
-                                <input type="checkbox" id="wind_angle_checkbox">
-                            </p>
-
-                            <p>
-                                <label for="rain_quantity" id="direction_vent">Cumul de pluie sur la journée en mm</label>
-                                <input type="checkbox" id="rain_quantity_checkbox">
-                            </p>
-                        </div>
+                    <div id="button_container">
+                        <button title="Plus d'options" type="button" id="settings_button"><em class="fa-solid fa-gear fa-2xl"></em></button>
+                        <button type="button" id="searchBtn" disabled>Rechercher</button>
+                    </div>
+                    
+                    <div id="settings">
+                        <p id="settings_title" class="bold">Options supplémentaires :</p>
+            
+                        <label for="latitude" class="checkbox-label" id="label_input_style"><input type="checkbox" id="latitude_checkbox">
+                            Latitude décimale de la commune
+                        </label>
+                        <br>
+                        <label for="longitude" class="checkbox-label" id="label_input_style"><input type="checkbox" id="longitude_checkbox">
+                            Longitude décimale de la commune
+                        </label>
+                        <br>
+                        <label for="wind_speed" class="checkbox-label" id="label_input_style"><input type="checkbox" id="wind_speed_checkbox">
+                            Vent moyen à 10 mètres en km/h
+                        </label>
+                        <br>
+                        <label for="wind_angle" class="checkbox-label" id="label_input_style"><input type="checkbox" id="wind_angle_checkbox">
+                            Direction du vent en degrés (0 à 360°)
+                        </label>
+                        <br>
+                        <label for="rain_quantity" class="checkbox-label" id="label_input_style"><input type="checkbox" id="rain_quantity_checkbox">
+                            Cumul de pluie sur la journée en mm
+                        </label>
 
                     </div>
 

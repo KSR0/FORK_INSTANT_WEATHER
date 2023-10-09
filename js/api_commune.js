@@ -44,12 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#wind_speed_checkbox").checked = false;
         document.querySelector("#wind_angle_checkbox").checked = false;
 
-        modalWindowBtn.style.display = "none";
-        modalWindowBtn.style.cursor = "not-allowed";
+        settings_button.style.display = "none";
+        settings_button.style.cursor = "not-allowed";
         document.querySelector("#dropDownCard").innerHTML = "";
     }
     ///////
-    const modalWindowBtn = document.querySelector("#modalWindowBtn");
+    const settings_button = document.querySelector("#settings_button");
     ///////
 
 
