@@ -48,21 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const formattedDate = `${dayOfWeek} ${dayOfMonth.toString().padStart(2, '0')} ${month} ${year}`;
 
-            
-            let date;
-
-            const selectedValue = parseInt(document.querySelector("#day_number_select").value);
-        
-            if (selectedValue >= 1 && selectedValue <= 7) {
-                const limit = selectedValue;
-                const dropDownCard = document.getElementById("dropDownCard");
-                dropDownCard.innerHTML = "";
-                for (let i = 0; i < limit; i++) {
-                    let cpt = i + 1;
-                    date = new Date(data.forecast[i].datetime);
-                    dropDownCard.innerHTML += `<div id="dropDownCardChild">
-                    <h2 id="day">${daysOfWeek[date.getDay()]} ${date.getDate().toString().padStart(2, '0')} ${months[date.getMonth()]} ${date.getFullYear()}</h2>
-                    <h3 id="city_selected" class="bold">${data.city.name}</h3>
+            div.innerHTML = `
+                <div id="dropDownCardChild">
+                    <h2 id="day">${formattedDate}</h2>
+                    <p id="city_selected" class="bold">${data.city.name}</p>
                     
                     <div>
                         <i id="weather${cpt}" class = "wi icon_weather"></i>
