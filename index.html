@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/weather-icons.min.css">
-        <script type="module" src="js/api_meteo.js" defer></script>
-        <script src="js/api_commune.js" defer></script>
-        <script src="js/settings.js" defer></script>
+        <script type="module" src="js/api_meteo.js"></script>
+        <script src="js/api_commune.js" async></script>
+        <script src="js/settings.js" async></script>
         <title>Instant Weather</title>
         <link rel="icon" type="image/x-icon" href="/img/cloudy.ico">
         <script src="https://kit.fontawesome.com/7509b7dacb.js" crossorigin="anonymous" defer></script> <!-- // Font Awesome-->
@@ -52,23 +52,23 @@
                     <div id="settings">
                         <h3 id="settings_title" class="bold">Options supplémentaires :</h3>
             
-                        <label for="latitude_checkbox" class="checkbox-label" id="label_input_style"><input type="checkbox" id="latitude_checkbox">
+                        <label for="latitude_checkbox" class="checkbox-label label_input_style"><input type="checkbox" id="latitude_checkbox">
                             Latitude décimale de la commune
                         </label>
 
-                        <label for="longitude_checkbox" class="checkbox-label" id="label_input_style"><input type="checkbox" id="longitude_checkbox">
+                        <label for="longitude_checkbox" class="checkbox-label label_input_style"><input type="checkbox" id="longitude_checkbox">
                             Longitude décimale de la commune
                         </label>
 
-                        <label for="wind_speed_checkbox" class="checkbox-label" id="label_input_style"><input type="checkbox" id="wind_speed_checkbox">
+                        <label for="wind_speed_checkbox" class="checkbox-label label_input_style"><input type="checkbox" id="wind_speed_checkbox">
                             Vent moyen à 10 mètres en km/h
                         </label>
                         <br>
-                        <label for="wind_angle_checkbox" class="checkbox-label" id="label_input_style"><input type="checkbox" id="wind_angle_checkbox">
+                        <label for="wind_angle_checkbox" class="checkbox-label label_input_style"><input type="checkbox" id="wind_angle_checkbox">
                             Direction du vent en degrés (0 à 360°)
                         </label>
 
-                        <label for="rain_quantity_checkbox" class="checkbox-label" id="label_input_style"><input type="checkbox" id="rain_quantity_checkbox">
+                        <label for="rain_quantity_checkbox" class="checkbox-label label_input_style"><input type="checkbox" id="rain_quantity_checkbox">
                             Cumul de pluie sur la journée en mm
                         </label>
 
