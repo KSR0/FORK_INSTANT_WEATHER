@@ -21,6 +21,7 @@ body {
     padding: 2px;
     background-image: url('../img/bg_sky3.png');
     background-color: black;
+    background-attachment: fixed;
     animation: animateBG 25s ease-in-out infinite;
 }
 
@@ -290,6 +291,16 @@ h2 {
     grid-row: 1;
 }
 
+#align {
+    display: flex;
+    flex-direction: row;
+}
+
+#align1 {
+    display: flex;
+    flex-direction: row;
+}
+
 #sun_time, #raining_pourcentage {
     grid-row: 2;
 }
@@ -342,6 +353,10 @@ h2 {
     margin-left: 10%;
     width: 100%;
     display: flex;
+}
+
+em {
+    margin-right: 5px;
 }
 
 @keyframes rotateSun {
@@ -577,12 +592,13 @@ img {
     }
 
     #settings {
-        margin-bottom: 45px;
+        margin-bottom: 28%;
     }
     
     #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
         font-size: 1.1em;
     }
+
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
@@ -627,7 +643,7 @@ img {
     }
 
     #settings {
-        margin-bottom: 45px;
+        margin-bottom: 30%;
     }
     
     #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {
@@ -669,7 +685,7 @@ img {
     }
 
     #settings {
-        margin-bottom: 45px;
+        margin-bottom: 35%;
     }
     
     #sun_time_value, #raining_pourcentage_value, #latitude_value, #longitude_value, #vent_moyen_value, #direction_vent_value, #cumul_pluie_value {

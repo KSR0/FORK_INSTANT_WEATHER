@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     function createDropDownListDay() {
         document.querySelector("#select_a_day_nb").innerHTML = 
-            `<label id="label_style">Afficher la météo pour :</label>
+            `<label for="day_number_select" id="label_style">Afficher la météo pour :</label>
             <select name="dayNumber" id="day_number_select"></select>`;
     }
     ///////
